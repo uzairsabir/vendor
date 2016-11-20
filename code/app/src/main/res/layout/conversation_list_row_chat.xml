@@ -1,0 +1,108 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_white_grey_hover">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/item_list_height"
+            android:paddingRight="8dp">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/fresco_view"
+                android:layout_width="@dimen/item_image_width"
+                android:layout_height="match_parent"
+                android:padding="@dimen/margin_1"
+                fresco:actualImageScaleType="centerCrop"
+                fresco:fadeDuration="300"
+                fresco:failureImage="@drawable/com_facebook_profile_picture_blank_square"
+                fresco:progressBarImage="@drawable/aw_progressbar"
+                fresco:progressBarImageScaleType="centerInside"
+                fresco:roundAsCircle="true" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/fresco_view"
+                android:paddingLeft="8dp">
+
+                <TextView
+                    android:id="@+id/conversation_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/conversation_lastwrapper"
+                    android:layout_toLeftOf="@+id/conversation_lastupdate"
+                    android:paddingRight="4dp"
+                    android:singleLine="true"
+                    android:text="Awesome groupchat"
+                    android:textColor="@color/who_do_u_dark_grey"
+                    android:textSize="@dimen/textsize_title_5"
+                    android:typeface="sans" />
+
+                <RelativeLayout
+                    android:id="@+id/conversation_lastwrapper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/conversation_name"
+                    android:layout_marginTop="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/notification_status"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/conversation_lastmsg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scrollHorizontally="false"
+                            android:singleLine="true"
+                            android:text="This is a placeholder text to show the last messages"
+                            android:textColor="@color/who_do_u_medium_grey"
+                            android:textSize="@dimen/textsize_label_3" />
+
+                        <com.facebook.drawee.view.SimpleDraweeView
+                            android:id="@+id/conversation_lastimage"
+                            android:layout_width="fill_parent"
+                            android:layout_height="36dp"
+                            android:background="@color/black87"
+                            android:visibility="gone"
+                            fresco:actualImageScaleType="centerCrop"
+                            fresco:fadeDuration="300"
+                            fresco:progressBarImage="@drawable/aw_progressbar"
+                            fresco:progressBarImageScaleType="centerInside" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/notification_status"
+                        android:layout_width="16sp"
+                        android:layout_height="16sp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="4dp" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/conversation_lastupdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/conversation_name"
+                    android:layout_alignParentRight="true"
+                    android:gravity="right"
+                    android:text="23:42"
+                    android:textColor="@color/who_do_u_medium_grey"
+                    android:textSize="@dimen/textsize_label_3" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

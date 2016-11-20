@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:float="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/stripe_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/title_text_strip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_2"
+            android:gravity="center"
+            android:text="Stripe Application ID"
+            android:textColor="@color/app_text_color"
+            android:textSize="@dimen/textsize_label_2"
+            android:visibility="gone" />
+
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            float:fletTextAppearance="@style/App_EditTextStyle">
+
+            <EditText
+                android:id="@+id/first_name"
+                android:layout_width="@dimen/margin_26"
+                android:layout_height="@dimen/margin_4"
+                android:layout_below="@+id/title_text_strip"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_1"
+                android:background="@null"
+                android:ellipsize="end"
+                android:hint="First Name"
+                android:singleLine="true"
+                android:textColor="@color/app_text_color"
+                android:textColorHint="@color/app_text_blue"
+                android:textSize="@dimen/textsize_label_2" />
+
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+        <TextView
+            android:id="@+id/underline_"
+            android:layout_width="@dimen/margin_26"
+            android:layout_height="1dp"
+            android:layout_below="@+id/strip_name"
+            android:layout_centerHorizontal="true"
+            android:background="@color/textcolor_blue" />
+
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            float:fletTextAppearance="@style/App_EditTextStyle">
+
+            <EditText
+                android:id="@+id/last_name"
+                android:layout_width="@dimen/margin_26"
+                android:layout_height="@dimen/margin_4"
+                android:layout_below="@+id/title_text_strip"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_1"
+                android:background="@null"
+                android:ellipsize="end"
+                android:hint="Last Name"
+                android:singleLine="true"
+                android:textColor="@color/app_text_color"
+                android:textColorHint="@color/app_text_blue"
+                android:textSize="@dimen/textsize_label_2" />
+
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+        <TextView
+            android:id="@+id/underline"
+            android:layout_width="@dimen/margin_26"
+            android:layout_height="1dp"
+            android:layout_below="@+id/strip_name"
+            android:layout_centerHorizontal="true"
+            android:background="@color/textcolor_blue" />
+
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            float:fletTextAppearance="@style/App_EditTextStyle">
+
+            <EditText
+                android:id="@+id/strip_address"
+                android:layout_width="@dimen/margin_26"
+                android:layout_height="@dimen/margin_4"
+                android:layout_below="@+id/underline"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_1"
+                android:background="@null"
+                android:ellipsize="end"
+                android:hint="Address"
+                android:singleLine="true"
+                android:textColor="@color/app_text_color"
+                android:textColorHint="@color/app_text_blue"
+                android:textSize="@dimen/textsize_label_2" />
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+        <TextView
+            android:id="@+id/underline_2"
+            android:layout_width="@dimen/margin_26"
+            android:layout_height="1dp"
+            android:layout_below="@+id/strip_address"
+            android:layout_centerHorizontal="true"
+            android:background="@color/textcolor_blue" />
+
+
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            float:fletTextAppearance="@style/App_EditTextStyle">
+
+            <EditText
+                android:id="@+id/strip_city"
+                android:layout_width="@dimen/margin_26"
+                android:layout_height="@dimen/margin_4"
+                android:layout_below="@+id/underline"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_1"
+                android:background="@null"
+                android:ellipsize="end"
+                android:hint="City"
+                android:singleLine="true"
+                android:textColor="@color/app_text_color"
+                android:textColorHint="@color/app_text_blue"
+                android:textSize="@dimen/textsize_label_2" />
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+        <TextView
+            android:id="@+id/underline_7"
+            android:layout_width="@dimen/margin_26"
+            android:layout_height="1dp"
+            android:layout_below="@+id/strip_address"
+            android:layout_centerHorizontal="true"
+            android:background="@color/textcolor_blue" />
+
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            float:fletTextAppearance="@style/App_EditTextStyle">
+
+            <EditText
+                android:id="@+id/strip_dob"
+                android:layout_width="@dimen/margin_26"
+                android:layout_height="@dimen/margin_4"
+                android:layout_below="@+id/underline_2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_1"
+                android:background="@null"
+                android:ellipsize="end"
+                android:ems="10"
+                android:hint="Date of Birth (dd/mm/yyyy)"
+                android:inputType="date"
+                android:singleLine="true"
+                android:textColor="@color/app_text_color"
+                android:textColorHint="@color/app_text_blue"
+                android:textSize="@dimen/textsize_label_2" />
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+        <TextView
+            android:id="@+id/underline_3"
+            android:layout_width="@dimen/margin_26"
+            android:layout_height="1dp"
+            android:layout_below="@+id/strip_dob"
+            android:layout_centerHorizontal="true"
+            android:background="@color/textcolor_blue" />
+
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            float:fletTextAppearance="@style/App_EditTextStyle">
+
+            <EditText
+                android:id="@+id/strip_social_security"
+                android:layout_width="@dimen/margin_26"
+                android:layout_height="@dimen/margin_4"
+                android:layout_below="@+id/underline_3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_1"
+                android:background="@null"
+                android:ellipsize="end"
+                android:hint="Last 4 Digit Social Security Number"
+                android:inputType="number"
+                android:maxLength="4"
+                android:singleLine="true"
+                android:textColor="@color/app_text_color"
+                android:textColorHint="@color/app_text_blue"
+                android:textSize="@dimen/textsize_label_2" />
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+
+        <TextView
+            android:id="@+id/underline_4"
+            android:layout_width="@dimen/margin_26"
+            android:layout_height="1dp"
+            android:layout_below="@+id/strip_social_security"
+            android:layout_centerHorizontal="true"
+            android:background="@color/textcolor_blue" />
+
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            float:fletTextAppearance="@style/App_EditTextStyle">
+
+            <EditText
+                android:id="@+id/strip_account_number"
+                android:layout_width="@dimen/margin_26"
+                android:layout_height="@dimen/margin_4"
+                android:layout_below="@+id/underline_4"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_1"
+                android:background="@null"
+                android:hint="Bank Account Number"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textColor="@color/app_text_color"
+                android:textColorHint="@color/app_text_blue"
+                android:textSize="@dimen/textsize_label_2" />
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+        <TextView
+            android:id="@+id/underline_5"
+            android:layout_width="@dimen/margin_26"
+            android:layout_height="1dp"
+            android:layout_below="@+id/strip_account_number"
+            android:layout_centerHorizontal="true"
+            android:background="@color/textcolor_blue" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_6">
+
+            <ProgressBar
+                android:id="@+id/progress_loader"
+                style="?android:attr/progressBarStyleInverse"
+                android:layout_width="@dimen/margin_2"
+                android:layout_height="@dimen/margin_2"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="@dimen/margin_1"
+                android:layout_marginRight="@dimen/margin_4"
+                android:layout_marginTop="@dimen/margin_1"
+                android:indeterminateDrawable="@drawable/aw_progressbar"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/save"
+                android:layout_width="@dimen/margin_9"
+                android:layout_height="@dimen/margin_2_5"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="@dimen/margin_1"
+                android:layout_marginRight="@dimen/margin_1"
+                android:layout_marginTop="@dimen/margin_1"
+                android:background="@drawable/bg_green_hover"
+                android:gravity="center"
+                android:text="Save"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize_label_4" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/default_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_8"
+        android:background="@color/white"
+        android:visibility="gone">
+
+
+        <TextView
+            android:id="@+id/default_gateway"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_5"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/margin_2"
+            android:background="@drawable/bg_white_grey_hover"
+            android:drawableRight="@drawable/drop_down_new"
+            android:gravity="center"
+            android:paddingLeft="@dimen/margin_1"
+            android:textColor="@color/app_text_color"
+            android:textSize="@dimen/textsize_label_2" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/paypal_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_12"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/title_text_paypal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_2"
+            android:gravity="center"
+            android:text="Paypal Application ID"
+            android:textColor="@color/app_text_color"
+            android:textSize="@dimen/textsize_label_2"
+            android:visibility="gone" />
+
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:id="@+id/email_id_paypal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_1"
+            float:fletTextAppearance="@style/App_EditTextStyle">
+
+            <EditText
+                android:id="@+id/paypal_id"
+                android:layout_width="@dimen/margin_26"
+                android:layout_height="@dimen/margin_4"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_1"
+                android:background="@null"
+                android:hint="Paypal Email Id"
+                android:inputType="textWebEmailAddress"
+                android:textColor="@color/app_text_color"
+                android:textColorHint="@color/app_text_blue"
+                android:textSize="@dimen/textsize_label_2" />
+
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+        <TextView
+            android:id="@+id/underline_6"
+            android:layout_width="@dimen/margin_26"
+            android:layout_height="1dp"
+            android:layout_below="@+id/email_id_paypal"
+            android:layout_centerHorizontal="true"
+            android:background="@color/textcolor_blue" />
+
+        <ProgressBar
+            android:id="@+id/progress_loader_se"
+            style="?android:attr/progressBarStyleInverse"
+            android:layout_width="@dimen/margin_2"
+            android:layout_height="@dimen/margin_2"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/margin_1"
+            android:layout_marginRight="@dimen/margin_4"
+            android:layout_marginTop="@dimen/margin_1"
+            android:indeterminateDrawable="@drawable/aw_progressbar"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/save_paypal"
+            android:layout_width="@dimen/margin_9"
+            android:layout_height="@dimen/margin_2_5"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/margin_1"
+            android:layout_marginRight="@dimen/margin_1"
+            android:layout_marginTop="@dimen/margin_1"
+            android:background="@drawable/bg_green_hover"
+            android:gravity="center"
+            android:text="Save"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textsize_label_4" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

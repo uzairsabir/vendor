@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/zaairhomered_trans_90">
+
+    <RelativeLayout
+        android:id="@+id/top_app_icon_container"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/margin_12"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/top_app_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/margin_12"
+            android:layout_centerInParent="true"
+            android:src="@drawable/sidemenu_logo" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/menu_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/top_app_icon_container"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/top_app_icon_container"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        android:padding="@dimen/margin_2"
+        android:src="@null"
+        android:visibility="visible" />
+
+    <ListView
+        android:id="@+id/menu_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/top_app_icon_container"
+        android:background="@color/white"
+        android:cacheColorHint="@color/cache_color_hint"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="1dp"
+        android:paddingTop="@dimen/margin_3"
+        android:scrollbarThumbVertical="@drawable/bg_blue_with_round_edges" />
+
+    <ImageView
+        android:id="@+id/menu_setting"
+        android:layout_width="@dimen/menu_setting_icon_size"
+        android:layout_height="@dimen/menu_setting_icon_size"
+        android:layout_alignBottom="@id/menu_listview"
+        android:layout_alignRight="@id/menu_listview"
+        android:padding="@dimen/margin_1"
+        android:visibility="gone" />
+    <!--android:src="@drawable/ic_setting_light"-->
+
+</RelativeLayout>

@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "D:\\Android\\Who_do_u\\consumer\\code\\OCRTest\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\background_pressed.png",
+        "source": "D:\\Android\\Who_do_u\\consumer\\code\\OCRTest\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\background_pressed.png"
+    },
+    {
+        "merged": "D:\\Android\\Who_do_u\\consumer\\code\\OCRTest\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "D:\\Android\\Who_do_u\\consumer\\code\\OCRTest\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Android\\Who_do_u\\consumer\\code\\OCRTest\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\shutter.png",
+        "source": "D:\\Android\\Who_do_u\\consumer\\code\\OCRTest\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\shutter.png"
+    },
+    {
+        "merged": "D:\\Android\\Who_do_u\\consumer\\code\\OCRTest\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\shutter_pressed.png",
+        "source": "D:\\Android\\Who_do_u\\consumer\\code\\OCRTest\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\shutter_pressed.png"
+    },
+    {
+        "merged": "D:\\Android\\Who_do_u\\consumer\\code\\OCRTest\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\background.png",
+        "source": "D:\\Android\\Who_do_u\\consumer\\code\\OCRTest\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\background.png"
+    }
+]

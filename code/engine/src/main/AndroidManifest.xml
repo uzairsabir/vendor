@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?><!--suppress ALL -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.initializer.engine">
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <data android:host="litestcalback"></data>
+
+        <activity
+            android:name=".EngineController"
+            android:label="@string/app_name"></activity>
+        <activity
+            android:name="org.vanguardmatrix.engine.socials.LinkedInManager.LinkedInController"
+            android:theme="@style/Theme.NoTitleBar" />
+
+        <activity
+            android:name="org.vanguardmatrix.engine.socials.FacebookManager.FacebookController"
+            android:theme="@style/Theme.Mycustomtheme" />
+        <activity
+            android:name="org.vanguardmatrix.engine.socials.GooglePlusManager.GooglePlusController"
+            android:theme="@style/Theme.NoTitleBar" />
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:theme="@style/Theme.NoTitleBar" />
+        <activity
+            android:name="org.vanguardmatrix.engine.socialoauth.SocialOauthController"
+            android:theme="@style/Theme.NoTitleBar" />
+        <activity
+            android:name="org.vanguardmatrix.engine.utils.ImagePicker"
+            android:theme="@style/Theme.NoTitleBar" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_ap_id" />
+
+    </application>
+
+</manifest>

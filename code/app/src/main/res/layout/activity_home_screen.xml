@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_home_bg"
+    android:clickable="false">
+
+
+    <TextView
+        android:id="@+id/fake_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/app_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:id="@+id/bottom_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/margin_1"
+        android:background="@color/app_bg_color">
+
+        <include
+            layout="@layout/fragment_horizontal_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </RelativeLayout>
+
+
+    <ExpandableListView
+        android:id="@+id/expandableList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_lay"
+        android:layout_below="@id/title_bar"
+        android:layout_marginLeft="@dimen/margin_1"
+        android:layout_marginRight="@dimen/margin_1"
+        android:layout_marginTop="@dimen/margin_1"
+        android:cacheColorHint="@color/cache_color_hint"
+        android:childDivider="@null"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:groupIndicator="@null"
+        android:scrollbarSize="@dimen/margin_small"
+        android:scrollbarThumbVertical="@drawable/bg_blue_with_round_edges" />
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/no_data_lay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_lay"
+        android:layout_below="@id/title_bar"
+        android:layout_marginLeft="@dimen/margin_1"
+        android:layout_marginRight="@dimen/margin_1"
+        android:layout_marginTop="@dimen/margin_1">
+
+        <include
+            layout="@layout/no_data_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
+

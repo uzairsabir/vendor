@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_6"
+        android:background="@drawable/bg_white_blue_hover">
+
+        <ImageView
+            android:id="@+id/src_image"
+            android:layout_width="@dimen/margin_4"
+            android:layout_height="@dimen/margin_4"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:src="@drawable/home_import_fb" />
+
+
+        <ImageView
+            android:id="@+id/static_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_1"
+            android:src="@drawable/home_import_arrow" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/static_image"
+            android:layout_toRightOf="@id/src_image">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="Facebook"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_label_4" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="Facebook"
+                android:textColor="@color/app_text_color"
+                android:textSize="@dimen/textsize_label_6" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

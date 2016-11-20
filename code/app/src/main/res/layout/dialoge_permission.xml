@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/top_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="@dimen/margin_1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:text="Request"
+            android:textColor="@color/who_do_u_blue"
+            android:textSize="@dimen/textsize_label_2" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_2"
+            android:fontFamily="sans-serif-light"
+            android:text="Whodou would like to access your contacts. Click ok to proceed."
+            android:textColor="@color/who_do_u_blue"
+            android:textSize="@dimen/textsize_label_4" />
+
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/below_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_lay"
+        android:layout_margin="@dimen/margin_1"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/cancel_btn"
+            android:layout_width="@dimen/margin_14"
+            android:layout_height="@dimen/margin_4"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_blue_with_round_edges"
+            android:text="CANCEL"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textsize_label_2" />
+
+        <Button
+            android:id="@+id/signup_btn"
+            android:layout_width="@dimen/margin_14"
+            android:layout_height="@dimen/margin_4"
+            android:layout_marginRight="@dimen/margin_1"
+            android:layout_toLeftOf="@id/cancel_btn"
+            android:background="@drawable/bg_blue_with_round_edges"
+            android:text="Ok"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textsize_label_2" />
+
+        <ProgressBar
+            android:id="@+id/progress_loader"
+            style="?android:attr/progressBarStyleInverse"
+            android:layout_width="@dimen/margin_2"
+            android:layout_height="@dimen/margin_2"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="@dimen/margin_5"
+            android:layout_toLeftOf="@id/cancel_btn"
+            android:gravity="center"
+            android:indeterminateDrawable="@drawable/aw_progressbar"
+            android:visibility="invisible" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

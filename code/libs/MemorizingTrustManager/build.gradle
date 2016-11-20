@@ -1,0 +1,47 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.2'
+    }
+}
+apply plugin: 'com.android.library'
+android {
+    compileSdkVersion 24
+    buildToolsVersion '24.0.1'
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 2
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+    }
+
+}
+dependencies {
+    compile('com.android.support:support-v4:24.1.1') {
+
+        exclude group: 'com.google.android.gms'
+
+    }
+    compile ('com.android.support:appcompat-v7:24.1.1'){
+
+            exclude group: 'com.google.android.gms'
+
+    }
+    compile ('com.android.support:support-compat:24.2.0'){
+
+            exclude group: 'com.google.android.gms'
+
+    }
+}

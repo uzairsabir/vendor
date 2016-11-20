@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/menu_item_panel"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/margin_1"
+    android:paddingTop="@dimen/margin_1">
+
+    <TextView
+        android:id="@+id/fake_view"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/margin_6" />
+
+    <ImageView
+        android:id="@+id/menu_item_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/fake_view"
+        android:src="@drawable/sidemenu_home" />
+
+    <org.vanguardmatrix.engine.customviews.CustomTextView
+        android:id="@+id/menu_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/margin_1_5"
+        android:layout_toRightOf="@id/menu_item_icon"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:text="Payback Karachi"
+        android:textColor="@color/zaairhomered_trans_90"
+        android:textSize="@dimen/textsize_label_1" />
+
+</RelativeLayout>

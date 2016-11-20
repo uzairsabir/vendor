@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_4"
+        android:background="@drawable/bg_white_grey_hover">
+
+        <ImageView
+            android:id="@+id/category_image"
+            android:layout_width="@dimen/margin_3"
+            android:layout_height="@dimen/margin_3"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_small" />
+
+        <CheckBox
+            android:id="@+id/check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_1_5"
+            android:checked="false"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/margin_3"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_1"
+            android:layout_toLeftOf="@+id/check_box"
+            android:layout_toRightOf="@id/category_image"
+            android:gravity="center_vertical"
+            android:text="vendor sharing"
+            android:textColor="@color/app_text_color"
+            android:textSize="@dimen/textsize_title_5" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_2"
+            android:layout_below="@id/title"
+            android:layout_marginLeft="@dimen/margin_1"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="vendor sharing"
+            android:textColor="@color/app_text_color"
+            android:textSize="@dimen/textsize_label_4"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</LinearLayout>

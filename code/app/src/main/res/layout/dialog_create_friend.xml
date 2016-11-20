@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_5"
+        android:background="@color/app_title_bar_bg"
+        android:gravity="center"
+        android:paddingLeft="@dimen/margin_1"
+        android:text="How do you want to add Customer ?"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textsize_label_1" />
+
+    <TextView
+        android:id="@+id/create_new"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_5"
+        android:background="@drawable/bg_white_grey_hover"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/margin_1"
+        android:text="Create New"
+        android:textColor="@color/app_text_color"
+        android:textSize="@dimen/textsize_label_4" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/app_text_color" />
+
+    <TextView
+        android:id="@+id/contact_list"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_5"
+        android:background="@drawable/bg_white_grey_hover"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/margin_1"
+        android:text="From Contact List"
+        android:textColor="@color/app_text_color"
+        android:textSize="@dimen/textsize_label_4" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/app_text_color" />
+
+
+    <TextView
+        android:id="@+id/card_scan"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_5"
+        android:background="@drawable/bg_white_grey_hover"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/margin_1"
+        android:text="Scan Friend's Card"
+        android:textColor="@color/app_text_color"
+        android:textSize="@dimen/textsize_label_4"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/app_text_color"
+        android:visibility="gone" />
+
+</LinearLayout>

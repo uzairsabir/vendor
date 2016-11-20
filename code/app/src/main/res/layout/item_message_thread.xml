@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg_color"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/margin_small"
+            android:text="jame browe "
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_label_2"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/fake_view"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_margin="@dimen/margin_small"
+            android:background="@color/black" />
+
+        <TextView
+            android:id="@+id/description_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/margin_small"
+            android:text="jame browe "
+            android:layout_marginBottom="@dimen/margin_1"
+            android:textColor="@color/app_text_color"
+            android:textSize="@dimen/textsize_label_2" />
+    </LinearLayout>
+
+</LinearLayout>

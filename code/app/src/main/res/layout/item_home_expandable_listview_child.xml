@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/container_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_5"
+        android:background="@drawable/bg_white_blue_hover">
+
+        <RelativeLayout
+            android:id="@+id/static_image_container"
+            android:layout_width="@dimen/margin_13"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="false">
+
+            <ProgressBar
+                android:id="@+id/progress_loader"
+                style="?android:attr/progressBarStyleInverse"
+                android:layout_width="@dimen/margin_2"
+                android:layout_height="@dimen/margin_2"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_small_2"
+                android:indeterminateDrawable="@drawable/aw_progressbar"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/inner_circle_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_1"
+                android:src="@drawable/home_add" />
+
+
+            <TextView
+                android:id="@+id/inner_circle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/inner_circle_btn"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_1"
+                android:text="Inner Circle"
+                android:textColor="@color/app_text_color"
+                android:textSize="@dimen/textsize_label_4" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/import_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_3"
+            android:layout_toLeftOf="@id/static_image_container"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="Inner Circle"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_label_4" />
+
+
+        <TextView
+            android:id="@+id/contact_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_1"
+            android:layout_toLeftOf="@id/import_name"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="Inner Circle"
+            android:textColor="@color/app_text_color"
+            android:textSize="@dimen/textsize_label_4" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/app_home_bg" />
+    </RelativeLayout>
+
+</LinearLayout>

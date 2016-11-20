@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/page_title_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/app_title_bar_bg">
+
+        <RelativeLayout
+            android:id="@+id/search_back"
+            android:layout_width="@dimen/margin_7"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/bg_blue_hover">
+
+            <TextView
+                android:id="@+id/left_title_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_2_5"
+                android:text="Home"
+                android:textColor="@color/app_bg_color"
+                android:textSize="@dimen/textsize_label_1"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/leftimageview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/back_arrow_white_title_bar"
+                android:textColor="@color/app_bg_color"
+                android:textSize="@dimen/textsize_label_1" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/search_edittext_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/search_back"
+            android:background="@drawable/bg_blue_hover">
+
+            <ProgressBar
+                android:id="@+id/progress_loader"
+                style="?android:attr/progressBarStyleInverse"
+                android:layout_width="@dimen/margin_2"
+                android:layout_height="@dimen/margin_2"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/margin_1"
+                android:layout_marginTop="@dimen/margin_2"
+                android:indeterminateDrawable="@drawable/progressbar_whit"
+                android:visibility="invisible" />
+
+            <EditText
+                android:id="@+id/search_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="@dimen/margin_2"
+                android:layout_toLeftOf="@id/progress_loader"
+                android:background="@null"
+                android:hint="@string/search"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/textsize_label_1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/search_edit_text"
+                android:layout_marginTop="@dimen/margin_1"
+                android:background="@color/white" />
+
+
+            <ImageView
+                android:id="@+id/rightimage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/add_vendor"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

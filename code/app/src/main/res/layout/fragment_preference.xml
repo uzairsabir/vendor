@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:progressActivity="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_home_bg"
+    android:clickable="false">
+
+
+    <org.vanguardmatrix.engine.customviews.ProgressActivity
+        android:id="@+id/progressActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        progressActivity:emptyBackgroundColor="@color/white"
+        progressActivity:emptyContentTextColor="@color/gray_2"
+        progressActivity:errorBackgroundColor="@color/white"
+        progressActivity:loadingBackgroundColor="@color/white">
+
+        <ExpandableListView
+            android:id="@+id/expandableList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:cacheColorHint="@color/cache_color_hint"
+            android:childDivider="@null"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:groupIndicator="@null"
+            android:paddingTop="@dimen/margin_1"
+            android:scrollbarSize="@dimen/margin_small"
+            android:scrollbarThumbVertical="@drawable/bg_blue_with_round_edges" />
+
+    </org.vanguardmatrix.engine.customviews.ProgressActivity>
+
+</RelativeLayout>
+

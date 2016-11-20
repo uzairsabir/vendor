@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_home_bg"
+    android:clickable="false">
+
+
+    <TextView
+        android:id="@+id/fake_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/app_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <org.vanguardmatrix.engine.utils.PagerSlidingTabStrip
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/home_app_title_height"
+        android:layout_below="@id/title_bar"
+        android:background="@color/app_title_bar_bg"
+        android:textColor="@color/app_text_blue"
+        app:pstsIndicatorColor="@color/white"
+        app:pstsIndicatorHeight="@dimen/margin_small"
+        app:pstsUnderlineColor="@color/app_title_bar_bg" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_lay"
+        android:layout_below="@id/tabs"
+        android:layout_marginTop="@dimen/margin_1"
+        android:cacheColorHint="@color/cache_color_hint" />
+
+
+</RelativeLayout>
+

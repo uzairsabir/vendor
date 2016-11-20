@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+     Copyright (c) 2013, Redsolution LTD. All rights reserved.
+
+     This file is part of Xabber project; you can redistribute it and/or
+     modify it under the terms of the GNU General Public License, Version 3.
+
+     Xabber is distributed in the hope that it will be useful, but
+     WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+     See the GNU General Public License for more details.
+
+     You should have received a copy of the GNU General Public License,
+     along with this program. If not, see http://www.gnu.org/licenses/.
+-->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="Theme" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:startYear">1900</item>
+        <item name="android:fastScrollTrackDrawable">@style/listviewfastscrollstyle</item>
+        <item name="android:fastScrollThumbDrawable">@style/listviewfastscrollstyle</item>
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="android:actionBarTabTextStyle">@style/MyActionBarTabText</item>
+    </style>
+
+    <style name="Theme.MyAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:startYear">1900</item>
+    </style>
+    <style name="Theme.Mycustomtheme" parent="android:style/Theme.NoTitleBar.Fullscreen">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:startYear">1900</item>
+    </style>
+
+
+    <style name="listviewfastscrollstyle" parent="android:Theme">
+
+    </style>
+
+    <style name="Theme_ContactList" parent="@android:style/Theme">
+        <item name="android:startYear">1900</item>
+        <item name="android:actionBarStyle">@style/MyActionBarTheme</item>
+        <item name="android:popupMenuStyle">@style/MyPopupMenu</item>
+        <item name="android:itemTextAppearance">@style/TextAppearance</item>
+    </style>
+
+    <style name="Theme_MyProfile" parent="@android:style/Theme">
+        <item name="android:startYear">1900</item>
+        <item name="android:actionBarStyle">@style/MyActionBarTheme</item>
+        <item name="android:popupMenuStyle">@style/MyPopupMenu</item>
+        <item name="android:itemTextAppearance">@style/TextAppearance</item>
+    </style>
+    <!-- Popup Menu Background Color styles -->
+    <style name="MyPopupMenu" parent="@android:style/Widget.Holo.ListPopupWindow">
+
+    </style>
+    <!-- Popup Menu Text Color styles -->
+    <style name="TextAppearance">
+
+    </style>
+
+    <style name="MyActionBarTheme" parent="@android:style/Widget.Holo.Light.ActionBar">
+
+    </style>
+    <!-- <item name="android:dropDownSelector">@drawable/app_topbar_option_icon</item> -->
+
+
+    <!-- style the items within the overflow menu -->
+    <style name="MyDropDownListView" parent="android:style/Widget.Holo.ListView.DropDown">
+
+    </style>
+
+    <style name="Theme.AppBaseTheme" parent="@android:style/Theme.DeviceDefault.Light">
+        <item name="android:startYear">1900</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+    </style>
+
+    <style name="Theme.NoTitleBar" parent="@android:style/Theme.NoTitleBar">
+        <item name="android:startYear">1900</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- <item name="expanderBackground">@drawable/expander_background_dark</item>
+        <item name="expanderGroupColor">?android:attr/textColorPrimary</item>
+        <item name="expanderAccountColor">?android:attr/textColorPrimaryInverse</item>
+        <item name="expanderIndicator">@drawable/expander_indicator_dark</item>
+        <item name="accountBackground">@drawable/account_background</item>
+        <item name="titleMainBackground">@drawable/title_main_background_dark</item>
+        <item name="titleAccountBackground">@drawable/title_account_background_light</item>
+        <item name="textColorPrimaryNoSelected">@color/bright_foreground_dark</item> -->
+    </style>
+
+    <style name="noAnimTheme" parent="@android:style/Theme.NoTitleBar">
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="Theme.Dark" parent="@android:style/Theme.Black">
+        <item name="android:startYear">1900</item>
+    </style>
+
+    <style name="Theme.Dark.NoTitleBar" parent="@android:style/Theme.Black.NoTitleBar">
+        <item name="android:startYear">1900</item>
+    </style>
+
+    <style name="Theme.Light" parent="@android:style/Theme.Light">
+        <item name="android:startYear">1900</item>
+    </style>
+
+    <style name="Theme.Light.NoTitleBar" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:startYear">1900</item>
+    </style>
+
+    <!-- the theme applied to the application or activity -->
+    <style name="CustomActionBarTheme" parent="@style/Theme">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="android:actionBarTabTextStyle">@style/MyActionBarTabText</item>
+
+    </style>
+
+    <!-- ActionBar styles -->
+    <style name="MyActionBar" parent="@style/Theme">
+        <item name="android:titleTextStyle">@style/MyActionBarTitleText</item>
+        <item name="android:background">#febc04</item>
+    </style>
+
+    <!-- ActionBar title text -->
+    <style name="MyActionBarTitleText" parent="@style/Theme">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <!-- ActionBar tabs text styles -->
+    <style name="MyActionBarTabText" parent="@style/Theme">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="CustomWindowTitleBackground">
+
+    </style>
+
+    <style name="CustomWindowTheme" parent="@style/Theme">
+        <item name="android:windowTitleSize">55dip</item>
+        <item name="android:windowTitleBackgroundStyle">@style/CustomWindowTitleBackground</item>
+    </style>
+
+</resources>

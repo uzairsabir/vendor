@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/page_title_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/app_text_blue">
+
+        <TextView
+            android:id="@+id/page_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Select Image"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textsize_label_1" />
+
+        <RelativeLayout
+            android:id="@+id/back_arrow"
+            android:layout_width="@dimen/margin_8"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/bg_blue_hover">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:text="Back"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize_label_1" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/option_right1"
+            android:layout_width="@dimen/margin_8"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_blue_hover">
+
+            <TextView
+                android:layout_width="@dimen/margin_5"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="@dimen/margin_2"
+                android:text="Done"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize_label_1" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

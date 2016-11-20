@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_10"
+        android:background="@drawable/bg_white_blue_hover"
+        android:paddingTop="@dimen/margin_1">
+
+        <ProgressBar
+            android:id="@+id/listsviewloader2"
+            style="?android:attr/progressBarStyleInverse"
+            android:layout_width="@dimen/margin_1_5"
+            android:layout_height="@dimen/margin_1_5"
+            android:layout_marginLeft="@dimen/margin_1_5"
+            android:layout_marginTop="@dimen/margin_2"
+            android:indeterminateDrawable="@drawable/aw_progressbar" />
+
+        <org.vanguardmatrix.engine.customviews.CircularImageView
+            android:id="@+id/src_image"
+            android:layout_width="@dimen/margin_4"
+            android:layout_height="@dimen/margin_4"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_1"
+            app:border_width="1dip"
+            app:shadow="false" />
+
+
+        <RelativeLayout
+            android:id="@+id/static_image_container"
+            android:layout_width="@dimen/margin_9"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true">
+
+            <TextView
+                android:id="@+id/view"
+                android:layout_width="@dimen/margin_9"
+                android:layout_height="@dimen/margin_2_5"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/margin_1"
+                android:layout_marginTop="@dimen/margin_1"
+                android:background="@drawable/bg_green_hover"
+                android:gravity="center"
+                android:text="View"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize_label_4" />
+
+            <TextView
+                android:id="@+id/ping"
+                android:layout_width="@dimen/margin_9"
+                android:layout_height="@dimen/margin_2_5"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/view"
+                android:layout_marginRight="@dimen/margin_1"
+                android:layout_marginTop="@dimen/margin_1"
+                android:background="@drawable/bg_green_hover"
+                android:gravity="center"
+                android:text="Ping"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize_label_4" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/static_image_container_2"
+            android:layout_width="@dimen/margin_15"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/pay"
+                android:layout_width="@dimen/margin_9"
+                android:layout_height="@dimen/margin_2_5"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/margin_1"
+                android:layout_marginTop="@dimen/margin_1"
+                android:background="@drawable/bg_green_hover"
+                android:gravity="center"
+                android:text="Pay"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize_label_4"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/appointment"
+                android:layout_width="@dimen/margin_14"
+                android:layout_height="@dimen/margin_2_5"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/pay"
+                android:layout_marginRight="@dimen/margin_1"
+                android:layout_marginTop="@dimen/margin_1"
+                android:background="@drawable/bg_green_hover"
+                android:gravity="center"
+                android:text="Request Payment"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize_label_4" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/static_image_container_vendor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/static_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margin_1"
+                android:layout_marginTop="@dimen/margin_small"
+                android:src="@drawable/home_vendor_hover" />
+
+            <TextView
+                android:id="@+id/static_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/static_image"
+                android:layout_marginRight="@dimen/margin_small"
+                android:text="vendor"
+                android:textColor="@color/app_text_color"
+                android:textSize="@dimen/textsize_label_5" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/midcontainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_1"
+            android:layout_toLeftOf="@id/static_image_container"
+            android:layout_toRightOf="@id/src_image">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="Facebook"
+                android:textColor="@color/app_text_color"
+                android:textSize="@dimen/textsize_label_4" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:ellipsize="end"
+                android:text="Facebook"
+                android:textColor="@color/app_text_color"
+                android:textSize="@dimen/textsize_label_6" />
+
+            <TextView
+                android:id="@+id/new_customer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/description"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_small"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/green_tip"
+                android:textSize="@dimen/textsize_label_6" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="@style/CustomeRating"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/margin_2"
+                android:layout_below="@id/description"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/rated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ratingBar"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/app_text_color"
+                android:textSize="@dimen/textsize_label_6" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

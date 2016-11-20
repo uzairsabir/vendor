@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout
+        android:id="@+id/imageResize"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"></RelativeLayout>
+
+
+    <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/screen_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@color/cache_color_hint" />
+
+    <TextView
+        android:id="@+id/imageTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@color/zaairhomered_trans_50"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="5"
+        android:padding="@dimen/margin_2"
+        android:text="About Image"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textsize_label_1" />
+
+    <TextView
+        android:id="@+id/imagecount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageTitle"
+        android:layout_centerHorizontal="true"
+        android:background="@color/transparent_full"
+        android:maxLines="1"
+        android:padding="@dimen/margin_2"
+        android:text="01 of 20"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textsize_label_3" />
+
+
+</RelativeLayout>

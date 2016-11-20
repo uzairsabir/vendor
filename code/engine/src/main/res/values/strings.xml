@@ -1,0 +1,284 @@
+<resources>
+    <string name="facebook_ap_id">852499251508833</string>
+    <string name="app_name">Zaair Guide</string>
+    <string name="app_series">The Pilgrim Series</string>
+
+    <string name="app_inapp_cost">$2.99 Buy</string>
+    <string name="app_inapp_cost_description">Find out about those Ziaraat and their locations, which are not known to many people.</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="application_name">Zaair Guide</string>
+    <string name="application_state_closing">close</string>
+    <string name="pull_to_refresh_pull_label">Pull to refresh...</string>
+    <string name="pull_to_refresh_release_label">Release to refresh...</string>
+    <string name="pull_to_refresh_refreshing_label">Loading...</string>
+    <string name="pull_to_refresh_tap_label">Tap to refresh...</string>
+
+    <string name="progressActivityErrorButton">Try Again</string>
+
+    <string name="progressActivityEmptyTitlePlaceholder">Nothing Here</string>
+    <string name="progressActivityEmptyContentPlaceholder">We couldn\'t find anything. Tap the button to take your first image</string>
+    <string name="progressActivityErrorTitlePlaceholder">No Connection</string>
+    <string name="progressActivityErrorContentPlaceholder">We could not establish a connection with our servers. Please try again when you are connected to the internet.</string>
+
+
+
+
+    <string name="problem_msg">Something went wrong, please try later</string>
+    <string name="nosearch_msg">No Search Found For</string>
+    <string name="pleasetrylater_msg">Please try later</string>
+    <string name="sorry">Sorry</string>
+
+    <string name="section_title_profile">Profile</string>
+    <string name="section_title_contacts">Contacts</string>
+    <string name="section_title_chats">Chats</string>
+    <string name="section_title_feeds">Feeds</string>
+    <string name="section_title_trends">Trends</string>
+    <string name="section_title_map">Map</string>
+    <string name="section_title_home">Home</string>
+    <string name="section_title_groups">Groups</string>
+    <string name="section_title_settings">Settings</string>
+    <string name="section_title_timeline">Timeline</string>
+    <string name="section_title_spotlight">Spotlight</string>
+    <string name="section_title_directory">Directory</string>
+    <string name="section_title_city_voice">City Voice</string>
+    <string name="section_title_scripter">Scripter</string>
+    <string name="section_title_wakeup">Wake Up Khi</string>
+    <string name="section_title_conversation">Chat</string>
+    <string name="section_title_events">Events</string>
+    <string name="section_title_rescue">Rescue</string>
+    <string name="section_title_family_location">Family Locator</string>
+    <string name="section_title_friends_radar">Friends Radar</string>
+
+    <string name="navigation_drawer_open">Open Menu</string>
+    <string name="navigation_drawer_close">Close Menu</string>
+    <string name="title_activity_maps2">Map</string>
+    //-----------------------Zaair----------------------------
+    <string name="internetoffstatus">You are NOT Connected to the Internet</string>
+    <string name="wrong">Oops! Something went wrong</string>
+    <string name="already_as_consumer">User is already registered as customer</string>
+    <string name="locationoffstatus">Your location services are OFF</string>
+    <string name="locationoffstatus2">Your location services are off.\nFor more accurate results, tap here \n turn them on.</string>
+    <string name="title_activity_location_selection_map">Map</string>
+    <string name="title_activity_location_selection_maps">Map</string>
+    <string name="no_address">No Address</string>
+    <string name="no_result_found">No result were found.\nPlease try later.</string>
+    <string name="no_result_found_ziaraat">No result were found.\nPlease try a different Ziarat.</string>
+    <string name="no_data_found">No data available, \nPlease select a different location.</string>
+    <string name="no_landmarks_nearby">No Landmarks Nearby.</string>
+    <string name="compass_metal_warning">Warning! metallic cases or magnetic closure\nmay cause interferences</string>
+    <string name="default_degree_value">0 \u176</string>
+    <string name="degree_centigrade">\u176c</string>
+    <string name="no_search_found">Unable to find any result.</string>
+    <string name="related_personality">Related Personalities</string>
+    <string name="recitals">Recitals</string>
+    <string name="trips_title">Trips</string>
+    <string name="dummy_time">Month 00, 00:00 PM</string>
+    <string name="dummy_temp">100</string>
+    <string name="dummy_temp_condition">Haze</string>
+    <string name="side_menu_home_text">Home</string>
+    <string name="side_menu_namaz_text">Namaz Timing</string>
+    <string name="side_menu_qibla_text">Qibla Compass</string>
+    <string name="side_menu_weather_text">Weather</string>
+    <string name="side_menu_on_this_text">Calendar</string>
+    <string name="side_menu_history">History</string>
+    <string name="side_menu_emergency_number">Emergency Numbers</string>
+    <string name="side_menu_ziaraat">Recitals</string>
+    <string name="side_menu_settings_text">Settings</string>
+    <string name="historical">Historical Events</string>
+    <string name="no_related_personality">No related personality found</string>
+    <string name="no_history">No history in this week</string>
+    <string name="title_activity_map_view_main">Map</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="page_processing_text">Processing Data\nPlease wait</string>
+    <string name="no_data_available">No Data Available</string>
+    <string name="no_payment_available">No Payment Yet</string>
+    <string name="no_notification">No New Notification Found</string>
+    <string name="no_appointment">You have 0 Appointment</string>
+    <string name="pdetail_text1">Born</string>
+    <string name="pdetail_text2">Death</string>
+    <string name="pdetail_text3">Cause of death</string>
+    <string name="pdetail_text4">Resting place</string>
+    <string name="pdetail_text5">Residence</string>
+    <string name="pdetail_text6">Know for</string>
+    <string name="pdetail_text7">Parent(s)</string>
+    <string name="nodetail">No detail found</string>
+    <string name="download">Download</string>
+    <string name="download_media">Download Media</string>
+    <string name="for_offline_use">For Offline Use</string>
+    <string name="select_cities">Select Cities</string>
+    <string name="selected_cities">Selected Cities</string>
+    <string name="download_media_for_offline">Download Media of Other Cities for \nOffline Use</string>
+    <string name="selected_all">Select All</string>
+    <string name="pilgrimage">Pilgrimage</string>
+    <string name="trips">Trips</string>
+    <string name="history_available_soon">History will be available soon</string>
+    <string name="welcome_text">Find Ziaraat\'s nearby, or simply browse\nthrough listings and readings collected from\n various sources.</string>
+    <string name="discliamer">
+
+        ★ North measured by mobile sensors may vary up to 90 degrees from the true north, consequently Qiblah calculated from north in mobile applications may result in a serious deviation from the Qiblah direction. Visual Qiblah considers this reliability issue and overlays the Qiblah on Google Maps™ so that the user can visually verify Qiblah with nearby features, such as buildings, streets, and do the needed alignment.\n
+\n★ Magnetic deviation, induced by nearby metallic objects (e.g. mobile leather case) and electronic devices, can cause the sensors to behave unpredictably. Visual Qiblah identifies abnormal magnetic field strength and warns the user.\n
+\n★ Magnetic declination (the angle between true north and magnetic north) at user’s location is another source of confusion (e.g. In the South America magnetic declination reaches 17 degrees). Visual Qiblah calculates Qiblah from true (geographic) north. Additional information about Qiblah from magnetic north at user’s location is also provided for those who prefer to use real compass.\n
+\n★ Visual Qiblah uses formulae to calculate Qiblah that are accurate to within 0.5 mm (0.020″) on the Earth.
+
+
+    </string>
+
+    <string name="no_event_found">Information will be available soon, Please try later</string>
+    <string name="no_detail_found">Information will be available soon, Please try later</string>
+    <string name="no_related_found">Information will be available soon, Please try later</string>
+    <string name="no_search_result">Please enter a keyword to search result</string>
+    <string name="no_history_result">Information will be available soon.</string>
+    <string name="no_location">No location found!</string>
+    <string name="switch_on_gps">Switch on you Location Services.</string>
+    <string name="no_recital_found">Information will be available soon, Please try later</string>
+    <string name="no_nearby_ziaraat_found">No Nearby Ziaraat found, Please try later</string>
+    <string name="source">Source</string>
+    <string name="near_current">From: Your current location</string>
+    <string name="near_ziaraat">From: Ziarat</string>
+    <string name="no_trip_found">No trips found, Please try later</string>
+    <string name="distance_covered">Distance Covered</string>
+    <string name="distance_left">Distance Left</string>
+    <string name="get_route_from">Generate a route to this destination from:</string>
+    <string name="get_drivedir_from">Generate a driving direction to this destination from:</string>
+    <string name="from_current_loc">From my Current Location</string>
+    <string name="from_previos_ziarat">Previous Ziarat</string>
+    <string name="get_drivedir_title">"Generate Driving Direction"</string>
+    <string name="get_route_title">"Generate Route"</string>
+    <string name="continue_text">"Continue"</string>
+    <string name="features">Features</string>
+    <string name="hello_zaair_users">Hellow Zair Guide Users</string>
+    <string name="we_have_new_ziaraat_available">An update available that contains improved information and recitals.</string>
+    <string name="would_you_download_now">Would you like to download it?</string>
+    <string name="later">Later</string>
+    <string name="now">Now</string>
+    <string name="please_wait__">Please wait</string>
+    <string name="while_we_prepare_app_for_offline_use">While we prepare Application for Offline use.</string>
+    <string name="Sync_contact">while we sync your contacts.</string>
+    <string name="while_we_prepare_new_ziaraat_data">While we prepare Application for with new Ziaraat data.</string>
+    <string name="please_filled">Please fill all required fields</string>
+    <string name="phone_empty">Phone no is empty</string>
+    <string name="zip_code_empty">Zipcode is empty</string>
+    <string name="city_empty">City is empty</string>
+    <string name="password_lenght">8 digit password is required</string>
+    <string name="valid_email">Please enter valid email address</string>
+    <string name="newfriendfound">New friend found</string>
+    <string name="nonewfriend">No new friend found</string>
+    <string name="unable_to_create_vendor">unable to create new customer</string>
+    <string name="create_vendor">customer has been created</string>
+    <string name="updated_vendor">customer has been updated</string>
+    <string name="select_category">Please select category</string>
+    <string name="unable_to_update_vendor">unable to update customer</string>
+    <string name="recreateappoint">Your appointment has been re-schedule</string>
+    <string name="accept_appointment">Appointment accepted</string>
+    <string name="cancelappoint">Appointment has been cancelled</string>
+    <string name="rejectappoint">Appointment has been rejected</string>
+    <string name="msg_send">Your message has been sent</string>
+    <string name="sendinvitation">Sending... Invitation</string>
+    <string name="invitation_already_sent">Invitation already been sent</string>
+    <string name="invitation_sent">Invitation has been sent</string>
+    <string name="please_enter_mobile">Please enter mobile number to continue</string>
+    <string name="please_format_number">Please enter correct number</string>
+    <string name="payment_tab">Open Payment Tab</string>
+    <string name="messages">Open Message Center</string>
+    <string name="action_tab">Main Menu</string>
+    <string name="payment_remainder">Payment Reminder has been sent</string>
+    <string name="payment_request">Payment Request has been sent</string>
+    <string name="went_wrong">Something went wrong! Please check your internet connectivity.</string>
+    <string name="updated_successfully">Updated Successfully.</string>
+    <string-array name="facebook_array">
+        <item>User Profile</item>
+        <item>Post Message</item>
+        <item>Friends</item>
+        <item>Get Feeds</item>
+        <item>Upload Image</item>
+        <item>Get Albums</item>
+        <item>Update Story</item>
+        <item>Close Dialog</item>
+    </string-array>
+    <string-array name="twitter_array">
+        <item>User Profile</item>
+        <item>Send Tweet</item>
+        <item>Friends</item>
+        <item>Get Feeds</item>
+        <item>Upload Image</item>
+        <item>Get Albums</item>
+        <item>Close Dialog</item>
+    </string-array>
+    <string-array name="linkedin_array">
+        <item>User Profile</item>
+        <item>Post an Update</item>
+        <item>Friends</item>
+        <item>Get Feeds</item>
+        <item>Career</item>
+        <item>Close Dialog</item>
+    </string-array>
+    <string-array name="myspace_array">
+        <item>User Profile</item>
+        <item>Post an Update</item>
+        <item>Friends</item>
+        <item>Close Dialog</item>
+    </string-array>
+    <string-array name="yahoo_array">
+        <item>User Profile</item>
+        <item>Post an Update</item>
+        <item>Friends</item>
+        <item>Close Dialog</item>
+    </string-array>
+    <string-array name="yammer_array">
+        <item>User Profile</item>
+        <item>Post an Update</item>
+        <item>Contacts</item>
+        <item>Close Dialog</item>
+    </string-array>
+    <string-array name="googleplus_array">
+        <item>User Profile</item>
+        <item>Friends</item>
+        <item>Get Feeds</item>
+        <item>Get Albums</item>
+        <item>Close Dialog</item>
+    </string-array>
+    <string-array name="google_array">
+        <item>User Profile</item>
+        <item>Friends</item>
+        <item>Close Dialog</item>
+    </string-array>
+    <string-array name="foursquare_array">
+        <item>User Profile</item>
+        <item>Contacts</item>
+        <item>Close Dialog</item>
+    </string-array>
+    <string-array name="flickr_array">
+        <item>User Profile</item>
+        <item>Contacts</item>
+        <item>Close Dialog</item>
+    </string-array>
+    <string-array name="instagram_array">
+        <item>User Profile</item>
+        <item>Contacts</item>
+        <item>Get Feeds</item>
+        <item>Close Dialog</item>
+    </string-array>
+    <string-array name="salesforce_array">
+        <item>User Profile</item>
+        <item>Close Dialog</item>
+    </string-array>
+    <string-array name="runkeeper_array">
+        <item>User Profile</item>
+        <item>Close Dialog</item>
+    </string-array>
+    <string-array name="drawable_array">
+        <item>share</item>
+        <item>profile</item>
+        <item>contacts</item>
+        <item>feeds</item>
+        <item>image</item>
+        <item>albums</item>
+        <item>notepad</item>
+        <item>close</item>
+    </string-array>
+
+</resources>

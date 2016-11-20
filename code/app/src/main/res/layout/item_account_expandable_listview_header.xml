@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_4"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/notificcation_color"
+            android:layout_width="@dimen/margin_2"
+            android:layout_height="@dimen/margin_2"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_toRightOf="@id/notificcation_color"
+            android:text="vendor sharing"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_title_3" />
+
+        <TextView
+            android:id="@+id/type_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="@dimen/margin_small"
+            android:text="vendor sharing"
+            android:textColor="@color/app_text_blue"
+            android:textSize="@dimen/textsize_label_5"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:textColor="@color/black"
+            android:layout_alignParentBottom="true"
+            android:background="@color/app_home_bg" />
+    </RelativeLayout>
+
+</LinearLayout>

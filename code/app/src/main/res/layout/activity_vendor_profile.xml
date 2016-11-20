@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_home_bg">
+
+    <TextView
+        android:id="@+id/fake_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/app_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <RelativeLayout
+        android:id="@+id/no_data_lay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title_bar"
+        android:layout_marginLeft="@dimen/margin_1"
+        android:layout_marginRight="@dimen/margin_1"
+        android:layout_marginTop="@dimen/margin_1"
+        android:visibility="visible">
+
+        <include
+            layout="@layout/no_data_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/no_data_lay"
+        android:layout_margin="@dimen/margin_1"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <include
+            android:id="@+id/title_bar"
+            layout="@layout/item_vendor_inner_circle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarSize="@dimen/margin_small"
+            android:scrollbarThumbVertical="@drawable/bg_blue_with_round_edges">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/infocontainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false">
+
+                    <LinearLayout
+                        android:id="@+id/top_lay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/margin_1"
+                        android:layout_marginRight="@dimen/margin_1"
+                        android:background="@color/white"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_1"
+                            android:layout_marginTop="@dimen/margin_2"
+                            android:text="First Name"
+                            android:textColor="@color/app_text_blue"
+                            android:textSize="@dimen/margin_1_5" />
+
+
+                        <EditText
+                            android:id="@+id/first_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/margin_3"
+                            android:layout_marginLeft="@dimen/margin_1"
+                            android:layout_marginTop="@dimen/margin_small"
+                            android:background="@null"
+                            android:singleLine="true"
+                            android:textColor="@color/app_text_color"
+                            android:textColorHint="@color/app_text_color"
+                            android:textSize="@dimen/margin_1_5" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_below="@id/first_name"
+                            android:background="@color/app_home_bg" />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_1"
+                            android:layout_marginTop="@dimen/margin_1"
+                            android:text="Last Name"
+                            android:textColor="@color/app_text_blue"
+                            android:textSize="@dimen/margin_1_5" />
+
+
+                        <EditText
+                            android:id="@+id/last_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/margin_3"
+                            android:layout_marginLeft="@dimen/margin_1"
+                            android:layout_marginTop="@dimen/margin_small"
+                            android:background="@null"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:textColor="@color/app_text_color"
+                            android:textColorHint="@color/app_text_color"
+                            android:textSize="@dimen/margin_1_5" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/app_home_bg" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_1"
+                            android:layout_marginTop="@dimen/margin_1"
+                            android:text="Company"
+                            android:textColor="@color/app_text_blue"
+                            android:textSize="@dimen/margin_1_5" />
+
+                        <EditText
+                            android:id="@+id/company"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/margin_3"
+                            android:layout_marginLeft="@dimen/margin_1"
+                            android:layout_marginTop="@dimen/margin_small"
+                            android:background="@null"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:textColor="@color/app_text_color"
+                            android:textColorHint="@color/app_text_color"
+                            android:textSize="@dimen/margin_1_5" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/app_home_bg" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_1"
+                            android:layout_marginTop="@dimen/margin_1"
+                            android:text="Cell Phone"
+                            android:textColor="@color/app_text_blue"
+                            android:textSize="@dimen/margin_1_5" />
+
+                        <EditText
+                            android:id="@+id/cell_no"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/margin_3"
+                            android:layout_marginLeft="@dimen/margin_1"
+                            android:layout_marginTop="@dimen/margin_small"
+                            android:background="@null"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:textColor="@color/app_text_color"
+                            android:textColorHint="@color/app_text_color"
+                            android:textSize="@dimen/margin_1_5" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/app_home_bg" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_1"
+                            android:layout_marginTop="@dimen/margin_1"
+                            android:text="Email"
+                            android:textColor="@color/app_text_blue"
+                            android:textSize="@dimen/margin_1_5" />
+
+                        <EditText
+                            android:id="@+id/email"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/margin_3"
+                            android:layout_marginLeft="@dimen/margin_1"
+                            android:layout_marginTop="@dimen/margin_small"
+                            android:background="@null"
+                            android:inputType="textEmailAddress"
+                            android:singleLine="true"
+                            android:textColor="@color/app_text_color"
+                            android:textColorHint="@color/app_text_color"
+                            android:textSize="@dimen/margin_1_5" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/app_home_bg" />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_1"
+                            android:layout_marginTop="@dimen/margin_1"
+                            android:text="Zip Code"
+                            android:textColor="@color/app_text_blue"
+                            android:textSize="@dimen/margin_1_5" />
+
+                        <EditText
+                            android:id="@+id/website"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/margin_3"
+                            android:layout_marginLeft="@dimen/margin_1"
+                            android:layout_marginTop="@dimen/margin_1"
+                            android:background="@null"
+                            android:hint=""
+                            android:inputType="textWebEditText"
+                            android:singleLine="true"
+                            android:textColor="@color/app_text_color"
+                            android:textColorHint="@color/app_text_color"
+                            android:textSize="@dimen/margin_1_5" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/app_home_bg" />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_1"
+                            android:layout_marginTop="@dimen/margin_1"
+                            android:text="City"
+                            android:textColor="@color/app_text_blue"
+                            android:textSize="@dimen/margin_1_5" />
+
+                        <EditText
+                            android:id="@+id/city"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/margin_3"
+                            android:layout_marginLeft="@dimen/margin_1"
+                            android:layout_marginTop="@dimen/margin_1"
+                            android:background="@null"
+                            android:hint=""
+                            android:inputType="textWebEditText"
+                            android:singleLine="true"
+                            android:textColor="@color/app_text_color"
+                            android:textColorHint="@color/app_text_color"
+                            android:textSize="@dimen/margin_1_5" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/app_home_bg" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_1"
+                            android:layout_marginTop="@dimen/margin_1"
+                            android:text="Address"
+                            android:textColor="@color/app_title_bar_bg"
+                            android:textSize="@dimen/margin_1_5"
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/state"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/margin_3"
+                            android:layout_marginLeft="@dimen/margin_1"
+                            android:layout_marginTop="@dimen/margin_1"
+                            android:background="@null"
+                            android:hint=""
+                            android:inputType="textWebEditText"
+                            android:singleLine="true"
+                            android:textColor="@color/app_text_color"
+                            android:textColorHint="@color/app_text_color"
+                            android:textSize="@dimen/margin_1_5"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/app_home_bg" />
+
+                        <RelativeLayout
+                            android:id="@+id/categorylist_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/margin_7"
+                            android:background="@drawable/bg_white_grey_hover"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/categorylist_title"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin_1"
+                                android:layout_marginTop="@dimen/margin_1"
+                                android:text="Category"
+                                android:textColor="@color/app_title_bar_bg"
+                                android:textSize="@dimen/margin_1_5" />
+
+                            <TextView
+                                android:id="@+id/categorylist"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_below="@id/categorylist_title"
+                                android:layout_marginLeft="@dimen/margin_1"
+                                android:background="@drawable/bg_white_grey_hover"
+                                android:hint="Select"
+                                android:paddingTop="@dimen/margin_1"
+                                android:singleLine="true"
+                                android:textColor="@color/app_text_color"
+                                android:textColorHint="@color/app_text_color"
+                                android:textSize="@dimen/margin_1_5" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginTop="@dimen/margin_small"
+                                android:background="@color/app_home_bg" />
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/bottom_lay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/inner_circle_title"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin_1"
+                                android:layout_marginTop="@dimen/margin_1"
+                                android:text="Inner Circle"
+                                android:textColor="@color/app_title_bar_bg"
+                                android:textSize="@dimen/margin_1_5" />
+
+
+                            <org.vanguardmatrix.engine.customviews.HorizontialListViewSecond
+                                android:id="@+id/images_horizontal_listview_inner"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/margin_12"
+                                android:layout_below="@id/inner_circle_title"
+                                android:cacheColorHint="@color/cache_color_hint"></org.vanguardmatrix.engine.customviews.HorizontialListViewSecond>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

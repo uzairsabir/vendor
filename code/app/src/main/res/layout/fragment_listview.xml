@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_home_bg"
+    android:id="@+id/fragment_container"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/search_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tabs"
+        android:layout_marginLeft="@dimen/margin_1"
+        android:layout_marginRight="@dimen/margin_1"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/margin_1"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/searchicon"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/margin_4"
+            android:layout_weight="0.1"
+            android:background="@color/white"
+            android:src="@drawable/home_search" />
+
+        <EditText
+            android:id="@+id/customesearchbox"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/margin_4"
+            android:layout_weight="0.5"
+            android:background="@color/white"
+            android:hint="Search"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:paddingLeft="@dimen/margin_1"
+            android:textColor="@color/app_text_color"
+            android:textColorHint="@color/app_text_color"
+            android:textSize="@dimen/textsize_label_1" />
+
+        <ImageButton
+            android:id="@+id/searcharrow"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/margin_4"
+            android:layout_weight="0.1"
+            android:background="@color/white" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/categorylist_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_4"
+        android:layout_marginLeft="@dimen/margin_1"
+        android:layout_marginRight="@dimen/margin_1"
+        android:layout_marginTop="@dimen/margin_1"
+
+        android:background="@drawable/bg_white_grey_hover">
+
+        <TextView
+            android:layout_width="@dimen/margin_4"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/categorylist_title"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_1"
+            android:background="@drawable/bg_white_grey_hover"
+            android:hint="Filter"
+            android:singleLine="true"
+            android:textColor="@color/app_text_color"
+            android:textColorHint="@color/app_text_color"
+            android:textSize="@dimen/margin_1_5" />
+
+        <TextView
+            android:id="@+id/categorylist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/categorylist_title"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_2"
+            android:background="@drawable/bg_white_grey_hover"
+            android:drawablePadding="@dimen/margin_3"
+            android:drawableRight="@drawable/spinner_selector_icon"
+            android:hint="All"
+            android:singleLine="true"
+            android:textColor="@color/app_text_color"
+            android:textColorHint="@color/app_text_color"
+            android:textSize="@dimen/margin_1_5" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/no_data_lay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_lay"
+        android:layout_below="@id/categorylist_container"
+        android:layout_marginLeft="@dimen/margin_1"
+        android:layout_marginRight="@dimen/margin_1"
+        android:layout_marginTop="@dimen/margin_1">
+
+        <include
+            layout="@layout/no_data_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_container"
+        android:layout_marginLeft="@dimen/margin_1"
+        android:layout_marginRight="@dimen/margin_1"
+        android:layout_marginTop="@dimen/margin_1"
+        android:cacheColorHint="@color/cache_color_hint"
+        android:divider="@null"
+        android:dividerHeight="1dp"
+        android:scrollbarSize="@dimen/margin_small"
+        android:scrollbarThumbVertical="@drawable/bg_blue_with_round_edges" />
+
+
+</LinearLayout>

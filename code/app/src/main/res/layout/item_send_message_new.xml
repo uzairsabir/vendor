@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/sender_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_2"
+            android:layout_marginLeft="@dimen/margin_2"
+            android:layout_marginTop="@dimen/margin_1"
+            android:background="@drawable/bubble_other">
+
+            <TextView
+                android:id="@+id/sender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/margin_1"
+                android:layout_marginTop="@dimen/margin_small"
+                android:maxWidth="@dimen/margin_14"
+                android:text="hello njsndlasndjj lajsndlasndlaksndlasn"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize_label_2" />
+
+            <TextView
+                android:id="@+id/sender_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sender"
+                android:layout_marginBottom="@dimen/margin_1"
+                android:layout_toRightOf="@+id/sender"
+                android:paddingBottom="@dimen/margin_small"
+                android:paddingRight="@dimen/margin_small"
+                android:text="just now"
+                android:textColor="@color/app_text_color"
+                android:textSize="@dimen/textsize_label_7"
+                android:textStyle="italic" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/reciver_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/margin_2"
+            android:layout_marginRight="@dimen/margin_2"
+            android:layout_marginTop="@dimen/margin_1"
+            android:background="@drawable/bubble_self">
+
+
+            <TextView
+                android:id="@+id/reciver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_1"
+                android:layout_marginTop="@dimen/margin_small"
+                android:maxWidth="@dimen/margin_14"
+                android:text="hello njsndlasndjj ksnadd asmdaks"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize_label_2" />
+
+            <TextView
+                android:id="@+id/reciver_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/reciver"
+                android:layout_marginBottom="@dimen/margin_1"
+                android:layout_toRightOf="@+id/reciver"
+                android:paddingBottom="@dimen/margin_small"
+                android:paddingRight="@dimen/margin_small"
+                android:text="just now"
+                android:textColor="@color/app_text_color"
+                android:textSize="@dimen/textsize_label_7"
+                android:textStyle="italic" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

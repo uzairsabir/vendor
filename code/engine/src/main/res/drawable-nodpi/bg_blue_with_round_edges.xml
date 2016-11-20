@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="50dip" />
+
+            <stroke android:width="0.01dip" android:color="@color/zaairhomered_scrollbar" />
+
+            <gradient android:angle="-90" android:endColor="@color/zaairhomered_scrollbar" android:startColor="@color/directorygreen" />
+        </shape>
+    </item>
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="50dip" />
+
+            <stroke android:width="0.01dip" android:color="@color/zaairhomered_scrollbar" />
+
+            <solid android:color="@color/zaairhomered_scrollbar" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="50dip" />
+
+            <stroke android:width="0.01dip" android:color="@color/zaairhomered_scrollbar" />
+
+            <solid android:color="@color/zaairhomered_scrollbar" />
+        </shape>
+    </item>
+
+</selector>

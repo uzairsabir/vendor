@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_list_height"
+        android:background="@drawable/bg_white_grey_hover">
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/fresco_view"
+            android:layout_width="@dimen/item_image_width"
+            android:layout_height="match_parent"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:fadeDuration="300"
+            android:padding="@dimen/margin_1"
+            fresco:failureImage="@drawable/com_facebook_profile_picture_blank_square"
+            fresco:progressBarImage="@drawable/aw_progressbar"
+            fresco:progressBarImageScaleType="centerInside"
+            fresco:roundAsCircle="true" />
+
+        <RelativeLayout
+            android:id="@+id/left_container"
+            android:layout_width="@dimen/margin_9"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true">
+
+
+            <include layout="@layout/item_call_chat">
+
+
+            </include>
+
+
+            <!--<ImageView-->
+            <!--android:id="@+id/call_icon"-->
+            <!--android:layout_width="@dimen/margin_3"-->
+            <!--android:layout_height="@dimen/margin_3"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginRight="@dimen/margin_1_5"-->
+            <!--android:background="@drawable/bg_transparent_grey_hover"-->
+            <!--android:padding="@dimen/margin_small"-->
+            <!--android:src="@drawable/call_icon" />-->
+
+            <!--<ImageView-->
+            <!--android:id="@+id/chat_icon"-->
+            <!--android:layout_width="@dimen/margin_3"-->
+            <!--android:layout_height="@dimen/margin_3"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginRight="@dimen/margin_1"-->
+            <!--android:layout_toLeftOf="@+id/call_icon"-->
+            <!--android:background="@drawable/bg_transparent_grey_hover"-->
+            <!--android:padding="@dimen/margin_small"-->
+            <!--android:src="@drawable/chat_icon" />-->
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/left_container"
+            android:layout_toRightOf="@+id/fresco_view"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/margin_1"
+            android:paddingTop="@dimen/margin_1">
+
+            <TextView
+                android:id="@+id/title_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aubery Spencer"
+                android:textColor="@color/who_do_u_medium_grey"
+                android:textSize="@dimen/textsize_title_5" />
+
+            <TextView
+                android:id="@+id/service_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Personal Trainer"
+                android:textColor="@color/who_do_u_medium_grey"
+                android:textSize="@dimen/textsize_label_3" />
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text=""
+                android:textColor="@color/who_do_u_medium_grey"
+                android:textSize="@dimen/textsize_label_3" />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

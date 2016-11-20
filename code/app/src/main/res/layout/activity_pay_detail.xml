@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_5"
+        android:orientation="horizontal"></LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/top_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+
+            layout="@layout/item_home_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></include>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/underline_color" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/bottom_lay"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_5"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"></LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottom_lay"
+            android:scrollbarSize="@dimen/margin_small"
+            android:scrollbarThumbVertical="@drawable/bg_blue_with_round_edges">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_2">
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_com_cutomer_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_5"
+                    android:layout_marginBottom="@dimen/margin_2"
+                    android:background="@drawable/bg_white_round_blue_edges"
+                    android:completionThreshold="1"
+                    android:hint="Type a provider name here "
+                    android:paddingLeft="@dimen/margin_1"
+                    android:textColor="@color/who_do_u_medium_grey"
+                    android:textSize="@dimen/margin_1_5"
+                    android:visibility="gone" />
+
+
+                <EditText
+                    android:id="@+id/amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_5"
+                    android:background="@drawable/bg_white_round_blue_edges"
+                    android:hint="Amount (USD)"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="@dimen/margin_1"
+                    android:singleLine="true"
+                    android:textColor="@color/who_do_u_medium_grey"
+                    android:textSize="@dimen/margin_1_5" />
+
+                <EditText
+                    android:id="@+id/service_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/margin_2"
+                    android:background="@drawable/bg_white_round_blue_edges"
+                    android:hint="Service Date"
+                    android:inputType="datetime"
+                    android:paddingLeft="@dimen/margin_1"
+                    android:singleLine="true"
+                    android:textColor="@color/who_do_u_medium_grey"
+                    android:textSize="@dimen/margin_1_5" />
+
+                <EditText
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_10"
+                    android:layout_marginTop="@dimen/margin_2"
+                    android:background="@drawable/bg_white_round_blue_edges"
+                    android:ellipsize="end"
+                    android:gravity="top"
+                    android:hint="Description of Services"
+                    android:inputType="textCapSentences"
+                    android:maxLines="5"
+                    android:paddingLeft="@dimen/margin_1"
+                    android:paddingTop="@dimen/margin_1"
+                    android:textColor="@color/who_do_u_medium_grey"
+                    android:textSize="@dimen/margin_1_5" />
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/margin_2"
+                    android:background="@drawable/bg_white_round_blue_edges_grey_hover"
+                    android:textSize="@dimen/margin_1_5"
+                    app:ms_background_color="@color/who_do_u_light_blue"
+                    app:ms_arrow_tint="@color/who_do_u_blue"
+                    app:ms_text_color="@color/black" />
+
+                <TextView
+                    android:id="@+id/default_gateway"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/margin_2"
+                    android:background="@drawable/bg_white_round_blue_edges_grey_hover"
+                    android:drawableRight="@drawable/drop_down_new"
+                    android:gravity="center_vertical"
+                    android:hint="PayPal Account(default)"
+                    android:paddingLeft="@dimen/margin_1"
+                    android:singleLine="true"
+                    android:textColor="@color/who_do_u_medium_grey"
+                    android:textColorHint="@color/who_do_u_medium_grey"
+                    android:textSize="@dimen/margin_1_5"
+                    android:visibility="gone" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_2">
+
+
+                    <TextView
+                        android:id="@+id/receipt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="Request Receipt?"
+                        android:textColor="@color/who_do_u_medium_grey"
+                        android:textSize="@dimen/textsize_title_5" />
+
+                    <com.kyleduo.switchbutton.SwitchButton
+                        android:id="@+id/switch_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/margin_1"
+                        android:layout_toRightOf="@+id/receipt"
+                        app:kswAnimationDuration="5"
+                        app:kswBackColor="@color/who_do_u_green"
+                        app:kswThumbColor="@color/white"
+                        app:kswThumbRadius="10dp"
+                        app:kswTintColor="@color/color_red" />
+
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/payment_btn"
+                    android:layout_width="@dimen/margin_15"
+                    android:layout_height="@dimen/margin_4"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:layout_marginTop="@dimen/margin_2"
+                    android:background="@drawable/bg_new_green_with_round_edges"
+                    android:text="Submit Payment"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_label_2" />
+            </LinearLayout>
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:progressActivity="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <org.vanguardmatrix.engine.customviews.ProgressActivity
+        android:id="@+id/progressActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        progressActivity:emptyBackgroundColor="@color/white"
+        progressActivity:emptyContentTextColor="@color/gray_2"
+        progressActivity:errorBackgroundColor="@color/white"
+        progressActivity:loadingBackgroundColor="@color/white">
+
+        <com.nhaarman.listviewanimations.itemmanipulation.DynamicListView
+            android:id="@+id/dynamiclistview"
+            style="@style/ListViewStyle.Light"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></com.nhaarman.listviewanimations.itemmanipulation.DynamicListView>
+        <!--<ListView-->
+            <!--android:id="@+id/listview"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_below="@id/search_container"-->
+            <!--android:layout_marginTop="@dimen/margin_1"-->
+            <!--android:cacheColorHint="@color/cache_color_hint"-->
+            <!--android:divider="@null"-->
+            <!--android:dividerHeight="1dp"-->
+            <!--android:scrollbarSize="@dimen/margin_small"-->
+            <!--android:scrollbarThumbVertical="@drawable/bg_blue_with_round_edges" />-->
+    </org.vanguardmatrix.engine.customviews.ProgressActivity>
+
+
+</LinearLayout>

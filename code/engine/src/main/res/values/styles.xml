@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+     Copyright (c) 2013, Redsolution LTD. All rights reserved.
+
+     This file is part of Xabber project; you can redistribute it and/or
+     modify it under the terms of the GNU General Public License, Version 3.
+
+     Xabber is distributed in the hope that it will be useful, but
+     WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+     See the GNU General Public License for more details.
+
+     You should have received a copy of the GNU General Public License,
+     along with this program. If not, see http://www.gnu.org/licenses/.
+-->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="NotificationTitle">
+        <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="NotificationText">
+        <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
+    </style>
+
+    <style name="NotificationText2" parent="@style/NotificationText">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="ChatHeader" parent="@android:style/TextAppearance">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="ChatHeader.Time">
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+
+    <style name="ChatHeader.Name">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ChatHeader.Delay">
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="ChatText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="ChatText.Small">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="ChatText.Normal">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="ChatText.Large">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="ChatText.XLarge">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="ChatInfo">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="ChatInfo.Warning">
+        <item name="android:textColor">#D00000</item>
+    </style>
+
+    <style name="ChatRead">
+        <!-- <item name="android:textColor">#222222</item> -->
+    </style>
+
+    <style name="ChatInfo.Info">
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+
+    <style name="ChatList" parent="@android:style/TextAppearance" />
+
+    <style name="ChatList.Normal">
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+
+    <style name="ChatList.Notification">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="OccupantList" parent="@android:style/TextAppearance" />
+
+    <style name="OccupantList.Moderator">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="OccupantList.Participant">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="OccupantList.Visitor">
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+
+    <style name="StarRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:minHeight">@dimen/ratingbarItemHeightMin</item>
+        <item name="android:maxHeight">200dip</item>
+        <item name="android:minWidth">@dimen/ratingbarItemWidthMin</item>
+        <item name="android:maxWidth">200dip</item>
+    </style>
+
+    <dimen name="contact_list_item_padding_top">2dip</dimen>
+    <dimen name="contact_list_item_padding_bottom">2dip</dimen>
+    <dimen name="contact_list_item_height">100dip</dimen>
+    <!-- = avatar_size + contact_list_item_padding_top + contact_list_item_padding_bottom -->
+
+    <dimen name="contact_list_status_mode_width">44dip</dimen>
+    <!-- = status_icon_width + active_chat_padding_right * 2 -->
+
+    <dimen name="active_chat_padding_left">10dip</dimen>
+    <dimen name="active_chat_padding_top">0dip</dimen>
+    <dimen name="active_chat_padding_right">10dip</dimen>
+    <dimen name="active_chat_padding_bottom">0dip</dimen>
+    <dimen name="client_software_margin_left">34dip</dimen>
+    <!-- = active_chat_padding_right + status_icon_width -->
+
+    <dimen name="contact_name_height_hide_status">48dip</dimen>
+    <!-- = avatar_size - active_chat_padding_top - active_chat_padding_bottom -->
+    <dimen name="contact_name_height_show_status">24dip</dimen>
+    <!-- = contact_name_height_hide_status / 2 -->
+
+    <dimen name="expander_height">38dip</dimen>
+    <dimen name="expander_arrow_margin_left">6dip</dimen>
+    <dimen name="expander_arrow_margin_right">4dip</dimen>
+    <dimen name="expander_text_margin_right">14dip</dimen>
+    <!-- = ( status_icon_width - offline_mode_width ) / 2 + active_chat_padding_right -->
+
+
+    <!-- The width of the big icons in notifications. -->
+    <dimen name="notification_large_icon_width">64dp</dimen>
+    <!-- The width of the big icons in notifications. -->
+    <dimen name="notification_large_icon_height">64dp</dimen>
+
+    <!-- imkarachi pages. -->
+    <dimen name="status_icon_width">24dip</dimen>
+    <dimen name="changestatus_bg_width">180dip</dimen>
+    <dimen name="changestatus_bg_height">285dip</dimen>
+    <dimen name="changestatus_top_padding">30dip</dimen>
+    <dimen name="avatar_size">45dip</dimen>
+    <dimen name="avatar_size4chatbox">44dip</dimen>
+    <dimen name="file_thumb_size">75dip</dimen>
+    <dimen name="chat_file_image_width">260dip</dimen>
+    <dimen name="chat_file_image_height">180dip</dimen>
+    <dimen name="chat_file_border">10dip</dimen>
+    <dimen name="chat_file_max_width">500dip</dimen>
+    <dimen name="chat_file_max_height">375dip</dimen>
+    <dimen name="title_height">60dip</dimen>
+    <dimen name="profile_img_width">100dip</dimen>
+    <dimen name="profile_img_height">140dip</dimen>
+    <dimen name="profile_main_txt">19sp</dimen>
+    <dimen name="profile_sub_txt">14sp</dimen>
+    <dimen name="contact_list_item_txt">14sp</dimen>
+    <dimen name="profile_small_txt">14sp</dimen>
+    <dimen name="textsize_s">14sp</dimen>
+    <dimen name="textsize_l">17sp</dimen>
+    <dimen name="textsize_s_4smsCount">11sp</dimen>
+    <dimen name="textsize_s_1">18sp</dimen>
+    <dimen name="textsize_s_2">11sp</dimen>
+    <dimen name="textsize_s_0">10sp</dimen>
+    <dimen name="textsize_side_option">18sp</dimen>
+    <dimen name="tab_height">55dip</dimen>
+
+    <dimen name="spinner_width">90dip</dimen>
+    <dimen name="spinner_height">23dip</dimen>
+    <dimen name="spinnerArrow_size">12dip</dimen>
+    <dimen name="spinnerFlag_margin">1dip</dimen>
+    <dimen name="toggle_width">50dip</dimen>
+    <dimen name="toggle_height">25dip</dimen>
+    <dimen name="chat_send_icon_width">40dip</dimen>
+    <dimen name="chat_send_icon_height">40dip</dimen>
+    <dimen name="profile_edittext_width">270dip</dimen>
+    <dimen name="profile_edittext_height">30dip</dimen>
+    <dimen name="social_editbox_height">25dip</dimen>
+    <dimen name="add_account_email_width">130dip</dimen>
+    <dimen name="chat_text_size">20sp</dimen>
+    <dimen name="chat_time_size">10sp</dimen>
+    <dimen name="chatbox_margin1">10dip</dimen>
+    <dimen name="profile_country_width">150dip</dimen>
+    <dimen name="caller_image_width">105dip</dimen>
+    <dimen name="caller_image_height">140dip</dimen>
+    <dimen name="invite_friend_height">500dip</dimen>
+    <dimen name="invite_friend_img_size">25dip</dimen>
+    <dimen name="invite_dialog_header_height">38dip</dimen>
+    <dimen name="invite_dialog_search_height">30dip</dimen>
+    <dimen name="invite_dialog_buttons_height">33dip</dimen>
+    <dimen name="invite_dialog_listview_height">200dip</dimen>
+    <dimen name="invite_dialog_width">250dip</dimen>
+    <dimen name="tab_text_size">16sp</dimen>
+    <dimen name="chat_bottomViewer_height">150dip</dimen>
+    <dimen name="chat_record_icon_size">70dip</dimen>
+    <dimen name="profile_edit_name_gender_dob_height">45dip</dimen>
+    <dimen name="profile_reload_icon_size">35dip</dimen>
+    <dimen name="phone_contact_search_width">150dip</dimen>
+    <dimen name="phone_contact_search_height">27dip</dimen>
+    <dimen name="loader_gif_size">18dp</dimen>
+    <dimen name="birthday_icn_size">15dp</dimen>
+    <dimen name="topbar_height">60dip</dimen>
+    <dimen name="topbar_loader_height">50dip</dimen>
+    <dimen name="topbar_loader_width">70dip</dimen>
+    <dimen name="topbar_title_txt">15sp</dimen>
+    <dimen name="topbar_status_txt">10sp</dimen>
+    <dimen name="topbar_searchbox_height">20dip</dimen>
+    <dimen name="topbar_search_icn_size">15dip</dimen>
+    <dimen name="ratingbarLayoutHeight">65dip</dimen>
+    <dimen name="ratingbarLayoutWidth">300dip</dimen>
+    <dimen name="ratingbarItemHeightMin">65dip</dimen>
+    <dimen name="ratingbarItemWidthMin">65dip</dimen>
+    <dimen name="ratingbarItemHeightMax">40dip</dimen>
+    <dimen name="ratingbarItemWidthMax">100dip</dimen>
+    <dimen name="feedbackpage_upperlayout_height">370dip</dimen>
+    <dimen name="feedbackpage_upperlayout_panel_height">80dip</dimen>
+    <dimen name="feedbackpage_result_text_size">30sp</dimen>
+    <dimen name="feedbackpage_title_size">26sp</dimen>
+    <dimen name="setting_title_txt">15sp</dimen>
+    <dimen name="setting_large_txt">40sp</dimen>
+    <dimen name="setting_small_txt">13sp</dimen>
+    <dimen name="chatpage_gallery_item_size">130dip</dimen>
+    <dimen name="setting_status_panel_width">200dip</dimen>
+    <dimen name="setting_status_txt_width">140dip</dimen>
+    <dimen name="feed_panel_height">140dip</dimen>
+    <dimen name="feed_item_width">143dip</dimen>
+
+    <dimen name="feed_pic_width">427dip</dimen>
+    <dimen name="feed_pic_height">65dip</dimen>
+    <dimen name="feed_image_height">185dip</dimen>
+    <dimen name="feed_box_with_image_height">295dip</dimen>
+    <dimen name="feed_item_txt_height">39dip</dimen>
+    <dimen name="feed_item_desc">12sp</dimen>
+    <dimen name="flipboard_pic_width">135dip</dimen>
+    <dimen name="flipboard_pic_height">100dip</dimen>
+    <dimen name="allcontacts_btm_padding">90dip</dimen>
+    <dimen name="flipboard_header_height">50dip</dimen>
+    <dimen name="flipboard_header_text_size">20sp</dimen>
+    <dimen name="flipboard_pic2_height">230dip</dimen>
+    <dimen name="flipboard_pic3_height">115dip</dimen>
+    <dimen name="tweet_pic2_height">330dip</dimen>
+    <dimen name="tag_circle_size">90dip</dimen>
+    <dimen name="tag_topbar_icon_size">40dip</dimen>
+
+    <dimen name="gif_loader_app_processing_size">80dip</dimen>
+    <dimen name="gif_loader_app_processing_container_height">100dip</dimen>
+    <dimen name="gif_loader_imkhi_init_height">110dip</dimen>
+    <dimen name="gif_loader_imkhi_init_width">110dip</dimen>
+
+    <style name="SwitchTextAppearance" parent="@android:style/TextAppearance.Large">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+
+</resources>

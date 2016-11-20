@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:progressActivity="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_5"
+        android:background="@color/who_do_u_blue">
+
+        <RelativeLayout
+            android:id="@+id/search_container"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_4"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_4"
+            android:layout_marginRight="@dimen/margin_4"
+            android:background="@drawable/bg_blue_with_white_round_edges">
+
+            <TextView
+                android:id="@+id/search_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawableLeft="@drawable/search_icon_white"
+                android:drawablePadding="@dimen/margin_1"
+                android:text="Search"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/search_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_4"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/margin_4"
+                android:background="@null"
+                android:drawableLeft="@drawable/search_icon_white"
+                android:drawablePadding="@dimen/margin_1"
+                android:hint="Search"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/imkhi_white_tr50"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <org.vanguardmatrix.engine.customviews.ProgressActivity
+        android:id="@+id/progressActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/activityToolbar"
+        progressActivity:emptyBackgroundColor="@color/white"
+        progressActivity:emptyContentTextColor="@color/gray_2"
+        progressActivity:errorBackgroundColor="@color/white"
+        progressActivity:loadingBackgroundColor="@color/white">
+
+        <se.emilsjolander.stickylistheaders.StickyListHeadersListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/search_container"
+            android:layout_marginTop="@dimen/margin_1"
+            android:cacheColorHint="@color/cache_color_hint"
+            android:divider="@color/who_do_u_light_grey"
+            android:dividerHeight="0.5dp"
+            android:scrollbarSize="@dimen/margin_small"
+            android:scrollbarThumbVertical="@drawable/bg_blue_with_round_edges" />
+    </org.vanguardmatrix.engine.customviews.ProgressActivity>
+
+
+</LinearLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_5"
+        android:orientation="horizontal"></LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/bottom_lay"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_5"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"></LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottom_lay">
+
+            <org.vanguardmatrix.engine.utils.PagerSlidingTabStrip
+                android:id="@+id/tabs_strip"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/home_app_title_height"
+                android:background="@color/who_do_u_blue"
+                android:textColor="@color/who_do_u_blue"
+                app:pstsIndicatorColor="@color/white"
+                app:pstsIndicatorHeight="@dimen/margin_small"
+                app:pstsShouldExpand="true"
+                app:pstsTextAllCaps="false"
+                app:pstsUnderlineColor="@color/who_do_u_blue" />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tabs_strip"></android.support.v4.view.ViewPager>
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

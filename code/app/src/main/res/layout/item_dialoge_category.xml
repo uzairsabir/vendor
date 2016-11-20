@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_6"
+        android:background="@drawable/bg_white_grey_hover">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/fresco_view"
+            android:layout_width="@dimen/margin_5"
+            android:layout_height="@dimen/margin_5"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_1"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:fadeDuration="300"
+            fresco:failureImage="@drawable/com_facebook_profile_picture_blank_square"
+            fresco:failureImageScaleType="centerCrop"
+            fresco:progressBarImage="@drawable/aw_progressbar"
+            fresco:progressBarImageScaleType="center"
+            fresco:roundAsCircle="true" />
+
+        <TextView
+            android:id="@+id/title_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_toRightOf="@id/fresco_view"
+            android:text="BabySitter"
+            android:textColor="@color/who_do_u_medium_grey"
+            android:textSize="@dimen/textsize_title_5" />
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/gallery"
+        android:icon="@drawable/add_new"
+        android:title="From Gallery" />
+    <item
+        android:id="@+id/camera"
+        android:icon="@drawable/from_contact_list"
+        android:title="From Camera" />
+
+    <group android:id="@+id/helpgroup">
+        <item
+            android:id="@+id/cancel"
+            android:icon="@drawable/cancel"
+            android:title="Cancel" />
+    </group>
+</menu>

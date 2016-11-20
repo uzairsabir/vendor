@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/top_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="@dimen/margin_1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="This vendor is already exsit!"
+            android:textColor="@color/login_btn"
+            android:textSize="@dimen/textsize_label_2"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_2"
+            android:text="What do you want to do ?"
+            android:textColor="@color/app_text_color" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/below_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_lay"
+        android:layout_margin="@dimen/margin_1">
+
+        <Button
+            android:id="@+id/cancel_btn"
+            android:layout_width="@dimen/margin_10"
+            android:layout_height="@dimen/margin_4"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_white_grey_hover"
+            android:text="Skip"
+            android:textColor="@color/app_text_color"
+            android:textSize="@dimen/textsize_label_5" />
+
+        <Button
+            android:id="@+id/signup_btn"
+            android:layout_width="@dimen/margin_10"
+            android:layout_height="@dimen/margin_4"
+            android:layout_marginRight="@dimen/margin_1"
+            android:layout_toLeftOf="@id/cancel_btn"
+            android:background="@drawable/bg_white_grey_hover"
+            android:text="Create New"
+            android:textColor="@color/login_btn"
+            android:textSize="@dimen/textsize_label_5" />
+
+        <ProgressBar
+            android:id="@+id/progress_loader"
+            style="?android:attr/progressBarStyleInverse"
+            android:layout_width="@dimen/margin_2"
+            android:layout_height="@dimen/margin_2"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="@dimen/margin_4"
+            android:gravity="center"
+            android:indeterminateDrawable="@drawable/aw_progressbar"
+            android:visibility="invisible" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

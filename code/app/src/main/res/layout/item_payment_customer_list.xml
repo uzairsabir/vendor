@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_white_grey_hover">
+
+        <org.vanguardmatrix.engine.customviews.CircularImageView
+            android:id="@+id/category_image"
+            android:layout_width="@dimen/margin_3"
+            android:layout_height="@dimen/margin_3"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_small" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_1"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_toRightOf="@id/category_image"
+            android:text="vendor sharing"
+            android:textColor="@color/app_text_color"
+            android:textSize="@dimen/textsize_title_5" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_2"
+            android:layout_below="@id/title"
+            android:layout_marginLeft="@dimen/margin_1"
+            android:layout_toRightOf="@id/category_image"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="vendor sharing"
+            android:textColor="@color/app_text_color"
+            android:textSize="@dimen/textsize_label_4" />
+    </RelativeLayout>
+
+</LinearLayout>

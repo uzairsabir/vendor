@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/top_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="@dimen/margin_1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Remove From My Customer!"
+            android:textColor="@color/login_btn"
+            android:textSize="@dimen/textsize_label_2"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_2"
+            android:text="Are you sure ?"
+            android:textColor="@color/app_text_color" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/below_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_lay"
+        android:layout_margin="@dimen/margin_1">
+
+        <Button
+            android:id="@+id/cancel_btn"
+            android:layout_width="@dimen/margin_10"
+            android:layout_height="@dimen/margin_4"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_white_grey_hover"
+            android:text="No"
+            android:textColor="@color/app_text_color"
+            android:textSize="@dimen/textsize_label_2" />
+
+        <Button
+            android:id="@+id/signup_btn"
+            android:layout_width="@dimen/margin_10"
+            android:layout_height="@dimen/margin_4"
+            android:layout_marginRight="@dimen/margin_1"
+            android:layout_toLeftOf="@id/cancel_btn"
+            android:background="@drawable/bg_white_grey_hover"
+            android:text="Yes"
+            android:textColor="@color/login_btn"
+            android:textSize="@dimen/textsize_label_2" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
