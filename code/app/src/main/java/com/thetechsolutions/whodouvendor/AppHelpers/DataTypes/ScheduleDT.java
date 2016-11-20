@@ -254,7 +254,7 @@ public class ScheduleDT extends RealmObject {
 
     public String getConsumer_image_url() {
         try {
-            MyLogs.printinfo("cat_url " + this.sub_category_image_url);
+            MyLogs.printinfo("cat_url " + this.consumer_image_url);
             if (!(consumer_image_url.contains(".jpeg") || consumer_image_url.contains(".png") || consumer_image_url.contains(".jpg"))) {
 
                 return "res:///" + R.drawable.com_facebook_profile_picture_blank_square;

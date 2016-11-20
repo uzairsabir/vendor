@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -23,7 +24,6 @@ import com.nhaarman.listviewanimations.appearance.simple.AlphaInAnimationAdapter
 import com.nhaarman.listviewanimations.itemmanipulation.DynamicListView;
 import com.thetechsolutions.whodouvendor.AppHelpers.Config.AppConstants;
 import com.thetechsolutions.whodouvendor.AppHelpers.Controllers.BottomMenuController;
-import com.thetechsolutions.whodouvendor.AppHelpers.Controllers.FragmentActivityController;
 import com.thetechsolutions.whodouvendor.AppHelpers.Controllers.MethodGenerator;
 import com.thetechsolutions.whodouvendor.AppHelpers.Controllers.TitleBarController;
 import com.thetechsolutions.whodouvendor.AppHelpers.DataBase.RealmDataRetrive;
@@ -37,19 +37,28 @@ import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 
 import org.vanguardmatrix.engine.android.AppPreferences;
-import org.vanguardmatrix.engine.utils.MyLogs;
 import org.vanguardmatrix.engine.utils.UtilityFunctions;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.UUID;
 
+import eu.siacs.conversation.Config;
+import eu.siacs.conversation.entities.Account;
+import eu.siacs.conversation.entities.Contact;
+import eu.siacs.conversation.entities.Conversation;
+import eu.siacs.conversation.entities.Message;
+import eu.siacs.conversation.services.XmppConnectionService;
+import eu.siacs.conversation.ui.XmppActivity;
+import eu.siacs.conversation.xmpp.jid.InvalidJidException;
+import eu.siacs.conversation.xmpp.jid.Jid;
 import uk.co.ribot.easyadapter.EasyAdapter;
 
 /**
  * Created by Uzair on 7/12/2016.
  */
-public class ScheduleDetailActivity extends FragmentActivityController implements MethodGenerator,
-        View.OnClickListener, DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
+public class ScheduleDetailActivity extends XmppActivity implements MethodGenerator,
+        View.OnClickListener, DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener, XmppConnectionService.OnShowErrorToast {
 
     static Activity activity;
 
@@ -67,7 +76,7 @@ public class ScheduleDetailActivity extends FragmentActivityController implement
     EditText description;
 
     long calId = 0;
-
+    ScheduleDT item_detail;
     String vendorId;
     String sqlDateTime;
     String callMessgae = "1";
@@ -81,6 +90,11 @@ public class ScheduleDetailActivity extends FragmentActivityController implement
         title = _title;
         providerUserName = _providerUserName;
         return new Intent(activity, ScheduleDetailActivity.class);
+
+    }
+
+    @Override
+    protected void refreshUiReal() {
 
     }
 
@@ -128,7 +142,7 @@ public class ScheduleDetailActivity extends FragmentActivityController implement
 
 
         if (id != 0) {
-            ScheduleDT item_detail = RealmDataRetrive.getScheduleDetail(id);
+            item_detail = RealmDataRetrive.getScheduleDetail(id);
             if (item_detail.getCall_message() == 1) {
                 switch_button.setChecked(true);
             } else {
@@ -405,7 +419,7 @@ public class ScheduleDetailActivity extends FragmentActivityController implement
             if (!appointmentStatus.equals("rejected")) {
                 calId = UtilityFunctions.addEvent(activity, sqlDateTime, title_name.getText().toString(), duration);
             } else {
-                  UtilityFunctions.deleteEventNew(activity, calId);
+                UtilityFunctions.deleteEventNew(activity, calId);
             }
         } catch (Exception e) {
 
@@ -432,7 +446,7 @@ public class ScheduleDetailActivity extends FragmentActivityController implement
         categoryDialoge.show();
         Window window = categoryDialoge.getWindow();
         window.setLayout(AppPreferences.getInt(AppPreferences.PREF_DEVICE_WIDTH) - 100, AppPreferences.getInt(AppPreferences.PREF_DEVICE_HEIGHT) - 1000);
-        EditText message = (EditText) categoryDialoge.findViewById(R.id.msg_input);
+        final EditText message = (EditText) categoryDialoge.findViewById(R.id.msg_input);
         Button send_btn = (Button) categoryDialoge.findViewById(R.id.send_message);
         Button cancel_btn = (Button) categoryDialoge.findViewById(R.id.cancel_message);
 
@@ -440,6 +454,8 @@ public class ScheduleDetailActivity extends FragmentActivityController implement
             @Override
             public void onClick(View view) {
                 validator(true, "rejected");
+                sendMessage("0011234567898_c", message.getText().toString());
+
             }
         });
 
@@ -452,6 +468,116 @@ public class ScheduleDetailActivity extends FragmentActivityController implement
             }
         });
 
+
+    }
+
+    public void sendMessage(String contactNumber, String message) {
+        String accountNumber = AppPreferences.getString(AppPreferences.PREF_USER_NUMBER) + "_v";
+        Log.e("prefilledJid ", " " + accountNumber + " " + contactNumber);
+
+        Jid accountJid = null;
+        try {
+
+            accountJid = Jid.fromString(accountNumber + "@" + Config.MAGIC_CREATE_DOMAIN);
+
+        } catch (InvalidJidException e) {
+            e.printStackTrace();
+        }
+        Jid contactJid = null;
+        try {
+            contactJid = Jid.fromString(contactNumber + "@" + Config.MAGIC_CREATE_DOMAIN);
+        } catch (InvalidJidException e) {
+            e.printStackTrace();
+        }
+        if (!xmppConnectionServiceBound) {
+            return;
+        }
+
+        final Account account = xmppConnectionService.findAccountByJid(accountJid);
+        if (account == null) {
+            return;
+        }
+
+        try {
+            final Contact contact = account.getRoster().getContact(contactJid);
+            Conversation conversation = null;
+            if (contact.showInRoster()) {
+
+                conversation = xmppConnectionService
+                        .findOrCreateConversation(contact.getAccount(),
+                                contact.getJid(), false);
+
+
+            } else {
+                xmppConnectionService.createContact(contact);
+                //    switchToConversation(contact);
+
+                conversation = xmppConnectionService
+                        .findOrCreateConversation(contact.getAccount(),
+                                contact.getJid(), false);
+                ///  switchToConversation(conversation);
+
+
+            }
+            sendMessage(conversation, message);
+        } catch (Exception e) {
+
+        }
+
+        return;
+
+
+    }
+
+    private void sendMessage(Conversation conversation, String messagea) {
+        final String body = messagea;
+        if (body.length() == 0 || conversation == null) {
+            return;
+        }
+        final Message message;
+        if (conversation.getCorrectingMessage() == null) {
+            message = new Message(conversation, body, conversation.getNextEncryption());
+            if (conversation.getMode() == Conversation.MODE_MULTI) {
+                if (conversation.getNextCounterpart() != null) {
+                    message.setCounterpart(conversation.getNextCounterpart());
+                    message.setType(Message.TYPE_PRIVATE);
+                }
+            }
+        } else {
+            message = conversation.getCorrectingMessage();
+            message.setBody(body);
+            message.setEdited(message.getUuid());
+            message.setUuid(UUID.randomUUID().toString());
+            conversation.setCorrectingMessage(null);
+        }
+        xmppConnectionService.sendMessage(message);
+        //messageSent();
+        //sendPlainTextMessage(message);
+//        switch (conversation.getNextEncryption()) {
+//            case Message.ENCRYPTION_OTR:
+//                sendOtrMessage(message);
+//                break;
+//            case Message.ENCRYPTION_PGP:
+//                sendPgpMessage(message);
+//                break;
+//            case Message.ENCRYPTION_AXOLOTL:
+//                if (!activity.trustKeysIfNeeded(ConversationActivity.REQUEST_TRUST_KEYS_TEXT)) {
+//                    sendAxolotlMessage(message);
+//                }
+//                break;
+//            default:
+//                sendPlainTextMessage(message);
+//        }
+    }
+
+
+    @Override
+    public void onShowErrorToast(int resId) {
+
+    }
+
+    @Override
+    protected void onBackendConnected() {
 
     }
 

@@ -310,7 +310,7 @@ public abstract class XmppActivity extends FragmentActivity {
 		builder.create().show();
 	}
 
-	abstract void onBackendConnected();
+	protected abstract void onBackendConnected();
 
 	protected void registerListeners() {
 		if (this instanceof XmppConnectionService.OnConversationUpdate) {
