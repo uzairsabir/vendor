@@ -725,11 +725,6 @@ public class RealmDataInsert {
                     }
 
 
-
-
-
-
-
                     try {
                         if (!jsonObject.getJSONObject(i).isNull("sub_category_id"))
                             tempItem.setSub_category_id(jsonObject.getJSONObject(i).getInt("sub_category_id"));
@@ -868,6 +863,24 @@ public class RealmDataInsert {
                             tempItem.setVendor_name(jsonObject.getJSONObject(i).getString("vendor_name"));
                         else {
                             tempItem.setVendor_name("");
+                        }
+                    } catch (Exception e) {
+
+                    }
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("consumer_username"))
+                            tempItem.setConsumer_username(jsonObject.getJSONObject(i).getString("consumer_username"));
+                        else {
+                            tempItem.setConsumer_username("");
+                        }
+                    } catch (Exception e) {
+
+                    }
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("vendor_username"))
+                            tempItem.setVendor_username(jsonObject.getJSONObject(i).getString("vendor_username"));
+                        else {
+                            tempItem.setVendor_username("");
                         }
                     } catch (Exception e) {
 

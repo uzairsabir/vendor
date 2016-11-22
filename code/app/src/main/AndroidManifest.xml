@@ -97,6 +97,7 @@
             android:name="com.thetechsolutions.whodouvendor.Schedule.activities.ScheduleDetailActivity"
             android:screenOrientation="portrait"
             android:theme="@style/noAnimTheme"
+            android:windowActionBar="false"
             android:windowSoftInputMode="adjustPan" />
 
         <activity

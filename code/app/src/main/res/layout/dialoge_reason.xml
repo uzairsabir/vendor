@@ -13,32 +13,34 @@
         android:layout_marginTop="@dimen/margin_1"
         android:text="Reason: "
         android:textColor="@color/who_do_u_blue"
-        android:textSize="@dimen/margin_2" />
+        android:textSize="@dimen/textsize_title_3" />
 
     <EditText
         android:id="@+id/msg_input"
         android:layout_width="match_parent"
         android:layout_height="@dimen/margin_10"
         android:layout_below="@+id/title"
-        android:layout_margin="@dimen/margin_small"
-        android:layout_marginLeft="@dimen/margin_small"
-        android:background="@drawable/bg_blue_with_round_edges_center_white"
+        android:layout_marginTop="@dimen/margin_2"
+        android:layout_marginLeft="@dimen/margin_2"
+        android:background="@drawable/bg_blue_round_center_white_only"
         android:ellipsize="end"
         android:gravity="top"
-        android:inputType="textCapSentences"
+        android:inputType="text|textMultiLine|textCapSentences"
         android:maxLines="5"
         android:paddingLeft="@dimen/margin_1"
         android:paddingTop="@dimen/margin_1"
-        android:text="uzair"
+        android:layout_marginRight="@dimen/margin_2"
+        android:hint="Type a message..."
+        android:text=""
         android:textColor="@color/app_text_color"
-        android:textSize="@dimen/margin_2" />
+        android:textSize="@dimen/textsize_label_1" />
 
     <RelativeLayout
         android:id="@+id/container"
         android:layout_width="wrap_content"
         android:layout_centerInParent="true"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_1"
+        android:layout_marginTop="@dimen/margin_2"
         android:layout_marginLeft="@dimen/margin_1"
         android:layout_marginRight="@dimen/margin_1"
         android:layout_below="@+id/msg_input">
@@ -50,7 +52,7 @@
             android:background="@drawable/bg_blue_with_round_edges"
             android:text="Send Message"
             android:textColor="@color/white"
-            android:textSize="@dimen/textsize_label_2" />
+            android:textSize="@dimen/textsize_label_5" />
 
         <Button
             android:id="@+id/cancel_message"
@@ -59,9 +61,9 @@
             android:layout_marginLeft="@dimen/margin_2"
             android:layout_toRightOf="@+id/send_message"
             android:background="@drawable/bg_blue_with_round_edges"
-            android:text="Cancel"
+            android:text="Cancel Directly"
             android:textColor="@color/white"
-            android:textSize="@dimen/textsize_label_2" />
+            android:textSize="@dimen/textsize_label_5" />
 
     </RelativeLayout>
 

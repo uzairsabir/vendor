@@ -316,8 +316,10 @@ public class NotificationService {
 
             } catch (Exception e) {
                 mBuilder.setContentTitle(getFormattedNumberToDisplay(mXmppConnectionService.getApplicationContext(), conversation.getName()));
-                mBuilder.setLargeIcon(mXmppConnectionService.getAvatarService()
-                        .get(conversation, getPixel(64)));
+//                mBuilder.setLargeIcon(mXmppConnectionService.getAvatarService()
+//                        .get(conversation, getPixel(64)));
+                mBuilder.setLargeIcon(StringToBitMap(R.drawable.ic_notification+""));
+
             }
 
             if (Config.HIDE_MESSAGE_TEXT_IN_NOTIFICATION) {

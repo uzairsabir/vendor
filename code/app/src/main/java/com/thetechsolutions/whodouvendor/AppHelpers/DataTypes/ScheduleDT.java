@@ -45,6 +45,8 @@ public class ScheduleDT extends RealmObject {
     private String vendor_address;
     private String consumer_zip_code;
     private String vendor_zip_code;
+    private String consumer_username;
+    private String vendor_username;
 
     public int getConsumer_id() {
         return consumer_id;
@@ -331,6 +333,22 @@ public class ScheduleDT extends RealmObject {
 
     public void setVendor_zip_code(String vendor_zip_code) {
         this.vendor_zip_code = vendor_zip_code;
+    }
+
+    public String getConsumer_username() {
+        return consumer_username;
+    }
+
+    public void setConsumer_username(String consumer_username) {
+        this.consumer_username = consumer_username;
+    }
+
+    public String getVendor_username() {
+        return vendor_username;
+    }
+
+    public void setVendor_username(String vendor_username) {
+        this.vendor_username = vendor_username;
     }
 }
 
