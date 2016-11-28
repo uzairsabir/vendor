@@ -134,8 +134,11 @@ public class RealmDataRetrive {
 
     public static RealmResults<PayDT> getPayList(int tabId) {
 
-         Realm realm = Realm.getDefaultInstance();
-        return realm.where(PayDT.class).findAll();
+        final Realm realm = Realm.getDefaultInstance();
+        if (tabId == 0) {
+            return realm.where(PayDT.class).equalTo("status", "pending").findAll();
+        }
+        return realm.where(PayDT.class).equalTo("status", "paid").findAll();
 
     }
 

@@ -62,8 +62,8 @@ public class PayListAdapter extends ItemViewHolder<PayDT> {
 
     @Override
     public void onSetValues(PayDT item, PositionInfo positionInfo) {
-        sourceImageView.setImageURI(Uri.parse(item.getDisplay_pic()));
-        title.setText(item.getTitle());
+        sourceImageView.setImageURI(Uri.parse(item.getConsumer_image_url()));
+        title.setText(item.getConsumer_name());
         if (pos == 1) {
             amount.setText("Amount Paid: " + item.getAmount());
             dollar_icon.setVisibility(View.VISIBLE);
@@ -72,7 +72,7 @@ public class PayListAdapter extends ItemViewHolder<PayDT> {
             dollar_icon.setVisibility(View.GONE);
         }
 
-        service_date.setText(item.getService_date());
+        service_date.setText(item.getDateToDisplay());
 
 
     }

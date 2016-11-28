@@ -261,7 +261,7 @@ public class ScheduleDetailActivity extends XmppActivity implements MethodGenera
         switch (v.getId()) {
             case R.id.accept_btn:
                 validator(true, "accepted");
-                sendMessage(item_detail.getConsumer_username() + "_c", "Appointment has been accepted:");
+                sendMessage(item_detail.getConsumer_username() + "_c", "Appointment has been accepted!");
 
                 break;
             case R.id.reschedule_btn:
@@ -463,7 +463,7 @@ public class ScheduleDetailActivity extends XmppActivity implements MethodGenera
             @Override
             public void onClick(View view) {
                 validator(true, "rejected");
-                sendMessage(item_detail.getConsumer_username() + "_c", "Appointment has been cancelled:\n" + message.getText().toString());
+                sendMessage(item_detail.getConsumer_username() + "_c", "Appointment has been cancelled!\n(" + message.getText().toString()+")");
 
             }
         });

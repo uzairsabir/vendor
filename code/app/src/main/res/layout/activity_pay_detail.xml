@@ -61,7 +61,7 @@
                     android:layout_marginBottom="@dimen/margin_2"
                     android:background="@drawable/bg_white_round_blue_edges"
                     android:completionThreshold="1"
-                    android:hint="Type a provider name here "
+                    android:hint="Type a customer name here "
                     android:paddingLeft="@dimen/margin_1"
                     android:textColor="@color/who_do_u_medium_grey"
                     android:textSize="@dimen/margin_1_5"
@@ -175,7 +175,7 @@
                     android:layout_marginRight="@dimen/margin_small"
                     android:layout_marginTop="@dimen/margin_2"
                     android:background="@drawable/bg_new_green_with_round_edges"
-                    android:text="Submit Payment"
+                    android:text="Payment Request"
                     android:textColor="@color/white"
                     android:textSize="@dimen/textsize_label_2" />
             </LinearLayout>

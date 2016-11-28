@@ -920,42 +920,280 @@ public class RealmDataInsert {
         return true;
     }
 
-    public static void insertPay(final JSONObject jsonObject) {
+    public static boolean insertPay(final JSONArray jsonObject) {
+
+        Realm realm = Realm.getDefaultInstance();
 
         try {
 
-            Realm realm = Realm.getDefaultInstance();
 
-            //realm.createObjectFromJson(CustomersDT.class, jsonObject);
-
-
-            for (int i = 1; i < 3; i++) {
-                PayDT tempItem = new PayDT();
+            for (int i = 0; i < jsonObject.length(); i++) {
                 realm.beginTransaction();
+                PayDT tempItem = new PayDT();
+                try {
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("id")) {
+                            tempItem.setId(jsonObject.getJSONObject(i).getInt("id"));
+                        } else {
+                            tempItem.setId(0);
+                        }
+                    } catch (Exception e) {
 
-                if (i == 1) {
-                    tempItem.setId(2);
-                    tempItem.setTitle("Aubery Spencer");
-                    tempItem.setService_date("Monday, july 18");
-                    tempItem.setAmount("$65");
-                    tempItem.setDisplay_pic("res:///" + R.drawable.auto_mechanic);
-                } else if (i == 2) {
-                    tempItem.setId(3);
-                    tempItem.setTitle("John Walton");
-                    tempItem.setService_date("Monday, july 20");
-                    tempItem.setAmount("$100");
-                    tempItem.setDisplay_pic("res:///" + R.drawable.babysitter);
+                    }
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("vendor_id")) {
+                            tempItem.setVendor_id(jsonObject.getJSONObject(i).getInt("vendor_id"));
+                        } else {
+                            tempItem.setVendor_id(0);
+                        }
+                    } catch (Exception e) {
+
+                    }
+
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("consumer_image_url")) {
+                            tempItem.setConsumer_image_url(jsonObject.getJSONObject(i).getString("consumer_image_url"));
+                        } else {
+                            tempItem.setConsumer_image_url("");
+                        }
+                    } catch (Exception e) {
+
+                    }
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("consumer_name")) {
+                            tempItem.setConsumer_name(jsonObject.getJSONObject(i).getString("consumer_name"));
+                        } else {
+                            tempItem.setConsumer_name("");
+                        }
+                    } catch (Exception e) {
+
+                    }
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("consumer_username")) {
+                            tempItem.setConsumer_username(jsonObject.getJSONObject(i).getString("consumer_username"));
+                        } else {
+                            tempItem.setConsumer_username("");
+                        }
+                    } catch (Exception e) {
+
+                    }
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("consumer_id")) {
+                            tempItem.setConsumer_id(jsonObject.getJSONObject(i).getInt("consumer_id"));
+                        } else {
+                            tempItem.setConsumer_id(0);
+                        }
+                    } catch (Exception e) {
+
+                    }
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("category_image_url")) {
+                            tempItem.setCategory_image_url(jsonObject.getJSONObject(i).getString("category_image_url"));
+                        } else {
+                            tempItem.setCategory_image_url("");
+                        }
+                    } catch (Exception e) {
+
+                    }
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("category_title")) {
+                            tempItem.setCategory_title(jsonObject.getJSONObject(i).getString("category_title"));
+                        } else {
+                            tempItem.setCategory_title("");
+                        }
+                    } catch (Exception e) {
+
+                    }
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("category_id")) {
+                            tempItem.setCategory_id(jsonObject.getJSONObject(i).getInt("category_id"));
+                        } else {
+                            tempItem.setCategory_id(0);
+                        }
+                    } catch (Exception e) {
+
+                    }
+
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("sub_category_image_url")) {
+                            tempItem.setSub_category_image_url(jsonObject.getJSONObject(i).getString("sub_category_image_url"));
+                        } else {
+                            tempItem.setSub_category_image_url("");
+                        }
+                    } catch (Exception e) {
+
+                    }
+
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("sub_categor_title")) {
+                            tempItem.setSub_categor_title(jsonObject.getJSONObject(i).getString("sub_categor_title"));
+                        } else {
+                            tempItem.setSub_categor_title("");
+                        }
+                    } catch (Exception e) {
+
+                    }
+
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("sub_category_id")) {
+                            tempItem.setSub_category_id(jsonObject.getJSONObject(i).getInt("sub_category_id"));
+                        } else {
+                            tempItem.setSub_category_id(0);
+                        }
+                    } catch (Exception e) {
+
+                    }
+
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("vendor_image_url")) {
+                            tempItem.setVendor_image_url(jsonObject.getJSONObject(i).getString("vendor_image_url"));
+                        } else {
+                            tempItem.setVendor_image_url("");
+                        }
+                    } catch (Exception e) {
+
+                    }
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("vendor_username")) {
+                            tempItem.setVendor_username(jsonObject.getJSONObject(i).getString("vendor_username"));
+                        } else {
+                            tempItem.setVendor_username("");
+                        }
+                    } catch (Exception e) {
+
+                    }
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("vendor_name")) {
+                            tempItem.setVendor_name(jsonObject.getJSONObject(i).getString("vendor_name"));
+                        } else {
+                            tempItem.setVendor_name("");
+                        }
+                    } catch (Exception e) {
+
+                    }
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("consumer_id")) {
+                            tempItem.setConsumer_id(jsonObject.getJSONObject(i).getInt("consumer_id"));
+                        } else {
+                            tempItem.setConsumer_id(0);
+                        }
+                    } catch (Exception e) {
+
+                    }
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("amount")) {
+                            tempItem.setAmount(jsonObject.getJSONObject(i).getString("amount"));
+                        } else {
+                            tempItem.setAmount("");
+                        }
+                    } catch (Exception e) {
+
+                    }
+
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("description")) {
+                            tempItem.setDescription(jsonObject.getJSONObject(i).getString("description"));
+                        } else {
+                            tempItem.setDescription("");
+                        }
+                    } catch (Exception e) {
+
+                    }
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("appointment_id")) {
+                            tempItem.setAppointment_id(jsonObject.getJSONObject(i).getInt("appointment_id"));
+                        } else {
+                            tempItem.setAppointment_id(0);
+                        }
+                    } catch (Exception e) {
+
+                    }
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("service_date")) {
+                            tempItem.setService_date(UtilityFunctions.convertDateToMillis(jsonObject.getJSONObject(i).getString("service_date")));
+                        } else {
+                            tempItem.setService_date(0);
+                        }
+                    } catch (Exception e) {
+
+                    }
+
+//                        "request_receipt": "1"
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("is_paid"))
+                            tempItem.setIs_paid(jsonObject.getJSONObject(i).getInt("is_paid"));
+                        else
+                            tempItem.setIs_paid(0);
+                    } catch (Exception e) {
+
+                    }
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("extra"))
+                            tempItem.setExtra(jsonObject.getJSONObject(i).getString("extra"));
+                        else
+                            tempItem.setExtra("");
+                    } catch (Exception e) {
+
+                    }
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("created_at"))
+                            tempItem.setCreated_at(jsonObject.getJSONObject(i).getString("created_at"));
+                        else
+                            tempItem.setCreated_at("");
+                    } catch (Exception e) {
+
+                    }
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("updated_at"))
+                            tempItem.setUpdated_at(jsonObject.getJSONObject(i).getString("updated_at"));
+                        else {
+                            tempItem.setUpdated_at("");
+                        }
+                    } catch (Exception e) {
+
+                    }
+
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("status"))
+                            tempItem.setStatus(jsonObject.getJSONObject(i).getString("status"));
+                        else {
+                            tempItem.setStatus("");
+                        }
+                    } catch (Exception e) {
+
+                    }
+                    try {
+                        if (!jsonObject.getJSONObject(i).isNull("request_receipt"))
+                            tempItem.setRequest_receipt(jsonObject.getJSONObject(i).getString("request_receipt"));
+                        else {
+                            tempItem.setRequest_receipt("");
+                        }
+                    } catch (Exception e) {
+
+                    }
+
+
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+
                 }
-                realm.copyToRealm(tempItem);
+
+
+                realm.insertOrUpdate(tempItem);
                 realm.commitTransaction();
+                //MyLogs.printinfo("tempItem " + tempItem.getAppointment_id());
+
+                //return true;
+
 
             }
-
-
         } catch (Exception e) {
+            e.printStackTrace();
+            realm.cancelTransaction();
 
         }
-
+        return true;
     }
 
     public static void insertSettingsPreference(final JSONArray jsonArray) {

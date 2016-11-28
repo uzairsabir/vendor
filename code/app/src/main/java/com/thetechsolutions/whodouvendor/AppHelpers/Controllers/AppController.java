@@ -51,7 +51,7 @@ public class AppController {
     public static void insertDummpyContent() {
         // RealmDataInsert.insertCustomers(null);
         // RealmDataInsert.insertSchedule(null);
-        RealmDataInsert.insertPay(null);
+     //   RealmDataInsert.insertPay(null);
         // RealmDataInsert.insertChat(null);
       //  RealmDataInsert.insertSettingsPreference(null);
         RealmDataInsert.insertSearchIn();

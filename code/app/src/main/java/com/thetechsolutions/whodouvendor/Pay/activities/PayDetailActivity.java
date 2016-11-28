@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -24,6 +25,7 @@ import com.thetechsolutions.whodouvendor.AppHelpers.Controllers.TitleBarControll
 import com.thetechsolutions.whodouvendor.AppHelpers.DataBase.RealmDataRetrive;
 import com.thetechsolutions.whodouvendor.AppHelpers.DataTypes.CustomersDT;
 import com.thetechsolutions.whodouvendor.AppHelpers.DataTypes.PayDT;
+import com.thetechsolutions.whodouvendor.Pay.controller.PayController;
 import com.thetechsolutions.whodouvendor.R;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
@@ -34,6 +36,8 @@ import org.vanguardmatrix.engine.utils.UtilityFunctions;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import io.realm.RealmResults;
+
 /**
  * Created by Uzair on 7/12/2016.
  */
@@ -41,9 +45,9 @@ public class PayDetailActivity extends FragmentActivityController implements Met
 
     static Activity activity;
 
-    TextView title_name, service_name, location_name;
+    TextView title_name, service_name, location_name, default_gateway, receipt;
     SimpleDraweeView fresco_view;
-    TextView amount, service_date, description, default_gateway, receipt;
+    EditText amount, service_date, description;
     SwitchButton switch_button;
     Button payment_btn;
     static int id, tab_pos;
@@ -52,6 +56,9 @@ public class PayDetailActivity extends FragmentActivityController implements Met
     static String title;
     MaterialSpinner spinner;
     String selectedDateTime;
+    String consumerId;
+    String sqlDateTime;
+    String callMessgae = "1";
 
     public static Intent createIntent(Activity _activity, int _id, int _tab_pos, String _title) {
         activity = _activity;
@@ -79,9 +86,9 @@ public class PayDetailActivity extends FragmentActivityController implements Met
         title_name = (TextView) findViewById(R.id.title_name);
         service_name = (TextView) findViewById(R.id.service_name);
         location_name = (TextView) findViewById(R.id.address);
-        amount = (TextView) findViewById(R.id.amount);
-        service_date = (TextView) findViewById(R.id.service_date);
-        description = (TextView) findViewById(R.id.description);
+        amount = (EditText) findViewById(R.id.amount);
+        service_date = (EditText) findViewById(R.id.service_date);
+        description = (EditText) findViewById(R.id.description);
         default_gateway = (TextView) findViewById(R.id.default_gateway);
 
         fresco_view = (SimpleDraweeView) findViewById(R.id.fresco_view);
@@ -121,7 +128,7 @@ public class PayDetailActivity extends FragmentActivityController implements Met
             //  final String[] names = new String[]{"Ricky", "Aubery", "David"};
             ArrayList<String> providers_name = new ArrayList<>();
             for (CustomersDT item : RealmDataRetrive.getCustomerList()) {
-                providers_name.add(item.getFirst_name() +" " +item.getLast_name());
+                providers_name.add(item.getFirst_name() + " " + item.getLast_name());
             }
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                     activity,
@@ -132,8 +139,19 @@ public class PayDetailActivity extends FragmentActivityController implements Met
             auto_com_cutomer_name.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
                 @Override
-                public void onItemClick(AdapterView<?> view, View arg1, int arg2, long arg3) {
+                public void onItemClick(AdapterView<?> view, View arg1, int position, long arg3) {
+                    String selected = (String) view.getItemAtPosition(position);
+                    int pos = -1;
+                    RealmResults<CustomersDT> arrayList = RealmDataRetrive.getCustomerList();
+                    for (int i = 0; i < arrayList.size(); i++) {
+                        if ((arrayList.get(i).getFirst_name() + " " + arrayList.get(i).getLast_name()).equals(selected)) {
+                            pos = i;
+                            System.out.println("Position " + pos);
 
+                            consumerId = "" + arrayList.get(i).getId();
+                            break;
+                        }
+                    }
 
                 }
             });
@@ -142,12 +160,20 @@ public class PayDetailActivity extends FragmentActivityController implements Met
 
             PayDT item_detail = RealmDataRetrive.getPayDetail(id);
 
-            title_name.setText(item_detail.getTitle());
+            title_name.setText(item_detail.getConsumer_name());
+            service_name.setText("No address");
             // service_name.setText("");
             // location_name.setText("");
             amount.setText(item_detail.getAmount());
-            service_date.setText(item_detail.getService_date());
-            fresco_view.setImageURI(Uri.parse(item_detail.getDisplay_pic()));
+            service_date.setText(item_detail.getDateToDisplay());
+            fresco_view.setImageURI(Uri.parse(item_detail.getConsumer_image_url()));
+            consumerId = "" + item_detail.getConsumer_id();
+
+            if (item_detail.getRequest_receipt().equals("1")) {
+                switch_button.setChecked(true);
+            } else {
+                switch_button.setChecked(false);
+            }
 
 
         }
@@ -166,8 +192,10 @@ public class PayDetailActivity extends FragmentActivityController implements Met
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     switch_button.setBackColor(ColorStateList.valueOf(activity.getResources().getColor(R.color.who_do_u_green)));
+                    callMessgae = "1";
                 } else {
                     switch_button.setBackColor(ColorStateList.valueOf(activity.getResources().getColor(R.color.who_do_u_red)));
+                    callMessgae = "0";
                 }
 
             }
@@ -188,6 +216,7 @@ public class PayDetailActivity extends FragmentActivityController implements Met
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.payment_btn:
+                validator(false);
                 break;
             case R.id.service_date:
                 // MyLogs.printinfo("appointment_date");
@@ -206,7 +235,9 @@ public class PayDetailActivity extends FragmentActivityController implements Met
 
     @Override
     public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
-        selectedDateTime = UtilityFunctions.ordinal(dayOfMonth) + " " + UtilityFunctions.getMonthFromInt(monthOfYear + 1) + ", " + year;
+        sqlDateTime = year + "-" + (Integer.parseInt("" + monthOfYear) + 1) + "-" + dayOfMonth;
+        //selectedDateTime = UtilityFunctions.ordinal(dayOfMonth) + " " + UtilityFunctions.getMonthFromInt(monthOfYear + 1) + ", " + year;
+        selectedDateTime = UtilityFunctions.getMonthFromInt(monthOfYear + 1) + " " + UtilityFunctions.ordinal(dayOfMonth) + ", " + year;
         Calendar now = Calendar.getInstance();
         TimePickerDialog tpd = TimePickerDialog.newInstance(this, now.get(Calendar.HOUR),
                 now.get(Calendar.MINUTE), false);
@@ -230,6 +261,27 @@ public class PayDetailActivity extends FragmentActivityController implements Met
         }
 
         service_date.setText(selectedDateTime);
+
+    }
+
+    private void validator(boolean isUpdate) {
+        // MyLogs.printinfo("sqlDatetime " + sqlDateTime);
+        if (UtilityFunctions.isEmpty(consumerId)) {
+            UtilityFunctions.showToast_onCenter("Please select a Customer", activity);
+            return;
+        }
+        if (UtilityFunctions.isEmpty(sqlDateTime)) {
+            UtilityFunctions.showToast_onCenter("Please select Service Date Time", activity);
+            return;
+        }
+        if (UtilityFunctions.isEmpty(amount.getText().toString())) {
+            UtilityFunctions.showToast_onCenter("Please enter amount", activity);
+            return;
+        }
+
+
+        PayController.getInstance().createPayment(activity, consumerId, amount.getText().toString(), description.getText().toString(), sqlDateTime, "pending", callMessgae);
+
 
     }
 }

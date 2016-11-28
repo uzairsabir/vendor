@@ -63,6 +63,19 @@ public class AsynGetDataController {
 
         }
 
+        try {
+            new getPayments(activity, "paid").executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+
+        } catch (Exception e) {
+
+        }
+        try {
+            new getPayments(activity, "pending").executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+
+        } catch (Exception e) {
+
+        }
+
 
     }
 
@@ -544,6 +557,18 @@ public class AsynGetDataController {
                 e.printStackTrace();
 
             }
+            try {
+                new getPayments(activity, "paid").executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+
+            } catch (Exception e) {
+
+            }
+            try {
+                new getPayments(activity, "pending").executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+
+            } catch (Exception e) {
+
+            }
         }
 
     }
@@ -636,5 +661,61 @@ public class AsynGetDataController {
 
         }
     }
+
+    private class getPayments extends AsyncTask<String, Void, Integer> {
+
+
+        Activity activity;
+        String paymentStatus = "";
+
+
+        public getPayments(Activity _activity, String _paymentStatus) {
+            activity = _activity;
+            paymentStatus = _paymentStatus;
+
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+
+        }
+
+        @Override
+        protected Integer doInBackground(String... params) {
+
+            try {
+
+                if (WebserviceModel.getPayment(paymentStatus))
+
+                    return 0;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            return 4;
+        }
+
+        @Override
+        protected void onPostExecute(Integer result) {
+            super.onPostExecute(result);
+
+
+            if (result == 0) {
+
+            } else {
+                MyLogs.printinfo(
+                        "Error in getting my payments"
+                );
+                //AppController.showToast(activity, activity.getResources().getString(R.string.went_wrong));
+            }
+
+
+        }
+
+
+    }
+
 
 }
