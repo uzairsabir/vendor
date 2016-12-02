@@ -96,7 +96,7 @@ public class PayController {
 
             if (result == 0) {
                 AppController.returnIntent(activity, "done");
-                UtilityFunctions.showToast_onCenter("Payment has been sent.",activity);
+                UtilityFunctions.showToast_onCenter("Payment Request has been sent",activity);
                 // PayMainActivity.
             } else {
                 MyLogs.printinfo(

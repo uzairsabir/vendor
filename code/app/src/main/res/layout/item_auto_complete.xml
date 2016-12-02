@@ -12,7 +12,7 @@
         android:paddingLeft="@dimen/margin_1"
         android:background="@drawable/bg_white_grey_hover"
         android:text="Search"
-        android:textColor="@color/who_do_u_medium_grey"
+        android:textColor="@color/who_do_u_dark_grey"
         android:textSize="@dimen/margin_1_5" />
 
 </LinearLayout>

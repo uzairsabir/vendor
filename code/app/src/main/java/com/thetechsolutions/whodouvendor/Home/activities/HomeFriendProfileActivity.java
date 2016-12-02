@@ -239,7 +239,7 @@ public class HomeFriendProfileActivity extends FragmentActivityController implem
                 dollar_icon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+                        ListenerController.openPaymentDetail(activity, 0, 3, "Create Payment",item_detail.getUsername());
                     }
                 });
                 calendar_icon.setOnClickListener(new View.OnClickListener() {
@@ -329,7 +329,7 @@ public class HomeFriendProfileActivity extends FragmentActivityController implem
                 dollar_icon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+                        ListenerController.openPaymentDetail(activity, 0, 3, "Create Payment",item_detail.getUsername());
                     }
                 });
                 calendar_icon.setOnClickListener(new View.OnClickListener() {

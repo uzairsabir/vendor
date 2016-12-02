@@ -72,24 +72,28 @@
                     android:id="@+id/amount"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/margin_5"
-                    android:background="@drawable/bg_white_round_blue_edges"
                     android:hint="Amount (USD)"
+                    android:background="@drawable/bg_white_round_blue_edges"
                     android:inputType="numberDecimal"
                     android:paddingLeft="@dimen/margin_1"
                     android:singleLine="true"
+                    android:drawableLeft="@drawable/dollar_amo"
                     android:textColor="@color/who_do_u_medium_grey"
-                    android:textSize="@dimen/margin_1_5" />
+                    android:textSize="@dimen/margin_1_5"  />
 
-                <EditText
+
+                <TextView
                     android:id="@+id/service_date"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/margin_5"
+                    android:gravity="center_vertical"
                     android:layout_marginTop="@dimen/margin_2"
-                    android:background="@drawable/bg_white_round_blue_edges"
+                    android:background="@drawable/bg_blue_with_round_edges_center_white"
                     android:hint="Service Date"
-                    android:inputType="datetime"
+                    android:inputType="numberDecimal"
                     android:paddingLeft="@dimen/margin_1"
                     android:singleLine="true"
+                    android:drawableRight="@drawable/drop_down_new"
                     android:textColor="@color/who_do_u_medium_grey"
                     android:textSize="@dimen/margin_1_5" />
 

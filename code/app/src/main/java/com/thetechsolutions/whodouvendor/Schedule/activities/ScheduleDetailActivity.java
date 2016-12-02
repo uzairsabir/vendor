@@ -37,6 +37,7 @@ import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 
 import org.vanguardmatrix.engine.android.AppPreferences;
+import org.vanguardmatrix.engine.utils.MyLogs;
 import org.vanguardmatrix.engine.utils.UtilityFunctions;
 
 import java.util.ArrayList;
@@ -223,6 +224,16 @@ public class ScheduleDetailActivity extends XmppActivity implements MethodGenera
                 public void onItemClick(AdapterView<?> view, View arg1, int position, long arg3) {
                     vendorId = "" + RealmDataRetrive.getCustomerList().get(position).getId();
 
+                }
+            });
+            auto_com_cutomer_name.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                    if (hasFocus) {
+                        MyLogs.printinfo("has_got_focus");
+                        auto_com_cutomer_name.showDropDown();
+
+                    }
                 }
             });
         }

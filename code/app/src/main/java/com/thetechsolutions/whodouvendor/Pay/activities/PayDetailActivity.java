@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -19,10 +20,10 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 import com.kyleduo.switchbutton.SwitchButton;
 import com.thetechsolutions.whodouvendor.AppHelpers.Controllers.BottomMenuController;
-import com.thetechsolutions.whodouvendor.AppHelpers.Controllers.FragmentActivityController;
 import com.thetechsolutions.whodouvendor.AppHelpers.Controllers.MethodGenerator;
 import com.thetechsolutions.whodouvendor.AppHelpers.Controllers.TitleBarController;
 import com.thetechsolutions.whodouvendor.AppHelpers.DataBase.RealmDataRetrive;
+import com.thetechsolutions.whodouvendor.AppHelpers.DataTypes.ColleagesDT;
 import com.thetechsolutions.whodouvendor.AppHelpers.DataTypes.CustomersDT;
 import com.thetechsolutions.whodouvendor.AppHelpers.DataTypes.PayDT;
 import com.thetechsolutions.whodouvendor.Pay.controller.PayController;
@@ -31,41 +32,66 @@ import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 
+import org.vanguardmatrix.engine.android.AppPreferences;
+import org.vanguardmatrix.engine.utils.MyLogs;
 import org.vanguardmatrix.engine.utils.UtilityFunctions;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.UUID;
 
+import eu.siacs.conversation.Config;
+import eu.siacs.conversation.entities.Account;
+import eu.siacs.conversation.entities.Contact;
+import eu.siacs.conversation.entities.Conversation;
+import eu.siacs.conversation.entities.Message;
+import eu.siacs.conversation.services.XmppConnectionService;
+import eu.siacs.conversation.ui.XmppActivity;
+import eu.siacs.conversation.xmpp.jid.InvalidJidException;
+import eu.siacs.conversation.xmpp.jid.Jid;
 import io.realm.RealmResults;
 
 /**
  * Created by Uzair on 7/12/2016.
  */
-public class PayDetailActivity extends FragmentActivityController implements MethodGenerator, View.OnClickListener, DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
+public class PayDetailActivity extends XmppActivity implements MethodGenerator, View.OnClickListener, DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener, XmppConnectionService.OnShowErrorToast {
 
     static Activity activity;
 
-    TextView title_name, service_name, location_name, default_gateway, receipt;
+    TextView title_name, service_name, location_name, default_gateway, receipt, service_date;
     SimpleDraweeView fresco_view;
-    EditText amount, service_date, description;
+    EditText amount, description;
     SwitchButton switch_button;
     Button payment_btn;
     static int id, tab_pos;
     RelativeLayout top_item;
     AutoCompleteTextView auto_com_cutomer_name;
-    static String title;
+    static String title, providerUserName, contact_number;
     MaterialSpinner spinner;
     String selectedDateTime;
     String consumerId;
     String sqlDateTime;
     String callMessgae = "1";
+    boolean isSendToServer = true;
 
-    public static Intent createIntent(Activity _activity, int _id, int _tab_pos, String _title) {
+
+    public static Intent createIntent(Activity _activity, int _id, int _tab_pos, String _title, String _providerUserName) {
         activity = _activity;
         id = _id;
         title = _title;
         tab_pos = _tab_pos;
+        providerUserName = _providerUserName;
         return new Intent(activity, PayDetailActivity.class);
+
+    }
+
+    @Override
+    protected void refreshUiReal() {
+
+    }
+
+    @Override
+    protected void onBackendConnected() {
 
     }
 
@@ -78,6 +104,12 @@ public class PayDetailActivity extends FragmentActivityController implements Met
         BottomMenuController.getInstance(activity).setBottomMenu(activity);
         viewInitialize();
         viewUpdate();
+        try {
+            getActionBar().hide();
+
+        } catch (Exception e) {
+
+        }
 
     }
 
@@ -87,7 +119,7 @@ public class PayDetailActivity extends FragmentActivityController implements Met
         service_name = (TextView) findViewById(R.id.service_name);
         location_name = (TextView) findViewById(R.id.address);
         amount = (EditText) findViewById(R.id.amount);
-        service_date = (EditText) findViewById(R.id.service_date);
+        service_date = (TextView) findViewById(R.id.service_date);
         description = (EditText) findViewById(R.id.description);
         default_gateway = (TextView) findViewById(R.id.default_gateway);
 
@@ -111,7 +143,7 @@ public class PayDetailActivity extends FragmentActivityController implements Met
 
             }
         });
-
+        spinner.setVisibility(View.GONE);
         service_date.setOnClickListener(this);
 
         // search_view = (MaterialSearchView) findViewById(R.id.search_view);
@@ -126,6 +158,16 @@ public class PayDetailActivity extends FragmentActivityController implements Met
             top_item.setVisibility(View.GONE);
             auto_com_cutomer_name.setVisibility(View.VISIBLE);
             //  final String[] names = new String[]{"Ricky", "Aubery", "David"};
+            auto_com_cutomer_name.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                    if (hasFocus) {
+                        MyLogs.printinfo("has_got_focus");
+                        auto_com_cutomer_name.showDropDown();
+
+                    }
+                }
+            });
             ArrayList<String> providers_name = new ArrayList<>();
             for (CustomersDT item : RealmDataRetrive.getCustomerList()) {
                 providers_name.add(item.getFirst_name() + " " + item.getLast_name());
@@ -149,6 +191,7 @@ public class PayDetailActivity extends FragmentActivityController implements Met
                             System.out.println("Position " + pos);
 
                             consumerId = "" + arrayList.get(i).getId();
+                            contact_number = arrayList.get(i).getUsername();
                             break;
                         }
                     }
@@ -156,12 +199,23 @@ public class PayDetailActivity extends FragmentActivityController implements Met
                 }
             });
 
+            if (!UtilityFunctions.isEmpty(providerUserName)) {
+                ColleagesDT item = RealmDataRetrive.getColleaguesDetail(providerUserName);
+                auto_com_cutomer_name.setText("" + item.getFirst_name() + " " + item.getLast_name());
+                consumerId = "" + item.getId();
+                auto_com_cutomer_name.setEnabled(false);
+                contact_number = providerUserName;
+
+
+            }
         } else {
 
             PayDT item_detail = RealmDataRetrive.getPayDetail(id);
 
+            isSendToServer = false;
             title_name.setText(item_detail.getConsumer_name());
             service_name.setText("No address");
+            description.setText(item_detail.getDescription());
             // service_name.setText("");
             // location_name.setText("");
             amount.setText(item_detail.getAmount());
@@ -174,7 +228,9 @@ public class PayDetailActivity extends FragmentActivityController implements Met
             } else {
                 switch_button.setChecked(false);
             }
-
+            contact_number = item_detail.getConsumer_username();
+            sqlDateTime = UtilityFunctions.converMillisToDate(item_detail.getService_date(), "yyyy-MM-dd HH:mm:ss");
+            selectedDateTime=item_detail.getDateToDisplay();
 
         }
 
@@ -278,10 +334,121 @@ public class PayDetailActivity extends FragmentActivityController implements Met
             UtilityFunctions.showToast_onCenter("Please enter amount", activity);
             return;
         }
+        sendMessage(contact_number + "_c", "New Payment Request!\n($ " + amount.getText().toString() + " Service On " + selectedDateTime + ")");
+
+        if (isSendToServer) {
+
+            PayController.getInstance().createPayment(activity, consumerId, amount.getText().toString(), description.getText().toString(), sqlDateTime, "pending", callMessgae);
 
 
-        PayController.getInstance().createPayment(activity, consumerId, amount.getText().toString(), description.getText().toString(), sqlDateTime, "pending", callMessgae);
+        } else {
+            UtilityFunctions.showToast_onCenter("Payment Request has been send.", activity);
+            activity.finish();
+        }
+    }
+
+    @Override
+    public void onShowErrorToast(int resId) {
+
+    }
+
+    public void sendMessage(String contactNumber, String message) {
+        String accountNumber = AppPreferences.getString(AppPreferences.PREF_USER_NUMBER) + "_v";
+        Log.e("prefilledJid ", " " + accountNumber + " " + contactNumber);
+
+        Jid accountJid = null;
+        try {
+
+            accountJid = Jid.fromString(accountNumber + "@" + Config.MAGIC_CREATE_DOMAIN);
+
+        } catch (InvalidJidException e) {
+            e.printStackTrace();
+        }
+        Jid contactJid = null;
+        try {
+            contactJid = Jid.fromString(contactNumber + "@" + Config.MAGIC_CREATE_DOMAIN);
+        } catch (InvalidJidException e) {
+            e.printStackTrace();
+        }
+        if (!xmppConnectionServiceBound) {
+            return;
+        }
+
+        final Account account = xmppConnectionService.findAccountByJid(accountJid);
+        if (account == null) {
+            return;
+        }
+
+        try {
+            final Contact contact = account.getRoster().getContact(contactJid);
+            Conversation conversation = null;
+            if (contact.showInRoster()) {
+
+                conversation = xmppConnectionService
+                        .findOrCreateConversation(contact.getAccount(),
+                                contact.getJid(), false);
+
+
+            } else {
+                xmppConnectionService.createContact(contact);
+                //    switchToConversation(contact);
+
+                conversation = xmppConnectionService
+                        .findOrCreateConversation(contact.getAccount(),
+                                contact.getJid(), false);
+                ///  switchToConversation(conversation);
+
+
+            }
+            sendMessage(conversation, message);
+        } catch (Exception e) {
+
+        }
+
+        return;
 
 
     }
+
+    private void sendMessage(Conversation conversation, String messagea) {
+        final String body = messagea;
+        if (body.length() == 0 || conversation == null) {
+            return;
+        }
+        final Message message;
+        if (conversation.getCorrectingMessage() == null) {
+            message = new Message(conversation, body, conversation.getNextEncryption());
+            if (conversation.getMode() == Conversation.MODE_MULTI) {
+                if (conversation.getNextCounterpart() != null) {
+                    message.setCounterpart(conversation.getNextCounterpart());
+                    message.setType(Message.TYPE_PRIVATE);
+                }
+            }
+        } else {
+            message = conversation.getCorrectingMessage();
+            message.setBody(body);
+            message.setEdited(message.getUuid());
+            message.setUuid(UUID.randomUUID().toString());
+            conversation.setCorrectingMessage(null);
+        }
+        xmppConnectionService.sendMessage(message);
+        //messageSent();
+        //sendPlainTextMessage(message);
+//        switch (conversation.getNextEncryption()) {
+//            case Message.ENCRYPTION_OTR:
+//                sendOtrMessage(message);
+//                break;
+//            case Message.ENCRYPTION_PGP:
+//                sendPgpMessage(message);
+//                break;
+//            case Message.ENCRYPTION_AXOLOTL:
+//                if (!activity.trustKeysIfNeeded(ConversationActivity.REQUEST_TRUST_KEYS_TEXT)) {
+//                    sendAxolotlMessage(message);
+//                }
+//                break;
+//            default:
+//                sendPlainTextMessage(message);
+//        }
+    }
+
 }

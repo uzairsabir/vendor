@@ -70,9 +70,9 @@ public class ListenerController {
 
     }
 
-    public static void openPaymentDetail(Activity activity, int id, int tab_pos, String title) {
+    public static void openPaymentDetail(Activity activity, int id, int tab_pos, String title,String providerName) {
         activity.startActivity(PayDetailActivity.createIntent(
-                activity, id, tab_pos, title));
+                activity, id, tab_pos, title,providerName));
 
     }
 

@@ -356,7 +356,7 @@ public class TitleBarController {
 
         } else if (activity instanceof PayMainActivity) {
 
-            ListenerController.openPaymentDetail(activity, 0, 3, "Create Payment");
+            ListenerController.openPaymentDetail(activity, 0, 3, "Create Payment","");
 
         } else if (activity instanceof ScheduleMainActivity) {
             final RealmResults<ScheduleDT> list = RealmDataRetrive.getScheduleList(0);

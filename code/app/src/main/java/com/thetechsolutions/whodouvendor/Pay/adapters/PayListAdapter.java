@@ -84,7 +84,7 @@ public class PayListAdapter extends ItemViewHolder<PayDT> {
         container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ListenerController.openPaymentDetail(activity, getItem().getId(), PayMainFragment.tab_pos,"Payment");
+                ListenerController.openPaymentDetail(activity, getItem().getId(), PayMainFragment.tab_pos,"Payment","");
             }
         });
 
