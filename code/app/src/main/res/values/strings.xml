@@ -15,8 +15,8 @@
     <string name="setting">Settings</string>
     <string name="home">Home</string>
     <string name="search">Search...</string>
-    <string name="intro_text_one">Whodou provides one place to manage all of your customer communication and helps you grow your business by connecting you with your existing customers friends and family. Its east and free!</string>
+    <string name="intro_text_one">Whodou provides one place to manage all of your customer communication and helps you grow your business by connecting you with your existing customers friends and family.\n\nIts east and free!</string>
     <string name="intro_text_second">Easily add your customer with click of a few buttons and start streamlining your business.</string>
     <string name="intro_text_third">Accelerate the growth of your business by automating word-of-mouth referrals between your existing customers and their friends and family.</string>
-    <string name="intro_text_forth">Whodou provides one place where you can communicate via live chat, request and receive mobile payment for your services, and manage appointments from your existing calendar.</string>
+    <string name="intro_text_forth">Communicate with customers via live chat, request and receive mobile payment for your services, and manage appointments from your existing calendar.</string>
 </resources>

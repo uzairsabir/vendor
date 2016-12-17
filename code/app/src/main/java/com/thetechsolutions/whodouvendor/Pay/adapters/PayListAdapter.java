@@ -65,10 +65,10 @@ public class PayListAdapter extends ItemViewHolder<PayDT> {
         sourceImageView.setImageURI(Uri.parse(item.getConsumer_image_url()));
         title.setText(item.getConsumer_name());
         if (pos == 1) {
-            amount.setText("Amount Paid: " + item.getAmount());
+            amount.setText("Amount Paid: $" + item.getAmount());
             dollar_icon.setVisibility(View.VISIBLE);
         } else if (pos== 0) {
-            amount.setText("Amount Requested: " + item.getAmount());
+            amount.setText("Amount Requested: $" + item.getAmount());
             dollar_icon.setVisibility(View.GONE);
         }
 

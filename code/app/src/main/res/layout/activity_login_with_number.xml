@@ -31,7 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="Sign Up"
+                android:background="@drawable/app_signup_icon"
                 android:textColor="@color/white"
                 android:textSize="@dimen/textsize_title_1" />
 
@@ -116,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_2"
                 android:gravity="center"
-                android:text="By signing up,"
+                android:text="By sign up,"
                 android:textColor="@color/black"
                 android:textSize="@dimen/textsize_label_3" />
 
@@ -156,10 +156,10 @@
                 android:layout_height="@dimen/margin_4_5"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/margin_2"
-                android:background="@drawable/bg_new_green_with_round_edges"
+                android:background="@drawable/bg_new_blue_button"
                 android:fontFamily="sans-serif-light"
-                android:text="Done"
-                android:textColor="@color/white"
+                android:text="Continue"
+                android:textColor="@color/black"
                 android:textSize="@dimen/textsize_label_2" />
 
 

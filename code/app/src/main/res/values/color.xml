@@ -3,7 +3,7 @@
 
 
 
-    <color name="who_do_u_light_blue">#01BAFD</color>
+    <color name="who_do_u_light_blue">#0A56A6</color>
     <color name="who_do_u_red">#FF6868</color>
     <color name="who_do_u_green">#3FD595</color>
     <color name="who_do_u_light_grey">#D4D4D4</color>
@@ -11,6 +11,10 @@
     <color name="who_do_u_dark_grey">#808080</color>
     <color name="who_do_u_blue">#006BB6</color>
 
+    <color name="who_do_u_welcome_screen">#0088EE</color>
+    <color name="who_do_u_welcome_connect">#13C88E</color>
+    <color name="who_do_u_welcome_discover">#FF6E67</color>
+    <color name="who_do_u_welcome_manage">#6887FF</color>
 
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>

@@ -176,7 +176,37 @@ public class ScheduleDT extends RealmObject {
     }
 
     public String getEstimated_duration() {
-        return estimated_duration;
+      //  return estimated_duration;
+        String hour = "", minutes = "";
+        if (estimated_duration.contains(".")) {
+
+            String a[] = estimated_duration.split("\\.");
+
+            MyLogs.printinfo("estimated_durt " + a.length);
+            if (!UtilityFunctions.isEmpty(a[0])) {
+                if (a[0].equals("1")) {
+                    hour = a[0] + " hour ";
+                } else {
+                    hour = a[0] + " hours ";
+                }
+
+            }
+            if (!UtilityFunctions.isEmpty(a[1])) {
+                if (a[1].equals("5")) {
+                    minutes = "30 minutes ";
+                }
+
+            }
+            return hour + " " + minutes;
+
+        }else{
+            if (estimated_duration.equals("1")) {
+                hour = estimated_duration + " hour ";
+            } else {
+                hour = estimated_duration + " hours ";
+            }
+        }
+        return hour;
     }
 
     public void setEstimated_duration(String estimated_duration) {
@@ -185,7 +215,7 @@ public class ScheduleDT extends RealmObject {
 
     public String getAppointmentTime() {
         try {
-            return UtilityFunctions.formatteSqlTime(UtilityFunctions.converMillisToDate(this.appointment_date_time, "yyyy-MM-dd HH:mm:ss")) + " (" + this.estimated_duration + ".)";
+            return UtilityFunctions.formatteSqlTime(UtilityFunctions.converMillisToDate(this.appointment_date_time, "yyyy-MM-dd HH:mm:ss")) + " (" + getEstimated_duration() + ".)";
         } catch (Exception e) {
 
         }

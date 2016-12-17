@@ -8,6 +8,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
+        android:background="@color/who_do_u_welcome_manage"
         android:layout_height="match_parent">
 
         <org.vanguardmatrix.engine.customviews.CustomTextView
@@ -16,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="Manage"
-            android:textColor="@color/imkhi_black_tr70"
+            android:textColor="@color/white"
             android:textSize="@dimen/textsize_title_1"></org.vanguardmatrix.engine.customviews.CustomTextView>
 
         <ImageView
@@ -25,7 +26,7 @@
             android:layout_above="@+id/welcome_title"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="@dimen/margin_4"
-            android:src="@drawable/manage_logo"></ImageView>
+            android:src="@drawable/white_app_icon"></ImageView>
 
 
         <org.vanguardmatrix.engine.customviews.CustomTextView
@@ -41,7 +42,7 @@
             android:gravity="center"
             android:maxLines="6"
             android:text="@string/intro_text_forth"
-            android:textColor="@color/imkhi_black_tr70"
+            android:textColor="@color/white"
             android:textSize="@dimen/textsize_title_4">
 
         </org.vanguardmatrix.engine.customviews.CustomTextView>

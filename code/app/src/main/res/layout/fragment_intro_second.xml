@@ -8,6 +8,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
+        android:background="@color/who_do_u_welcome_connect"
         android:layout_height="match_parent">
 
         <org.vanguardmatrix.engine.customviews.CustomTextView
@@ -15,17 +16,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Connect"
-            android:textColor="@color/imkhi_black_tr70"
+            android:text="Grow"
+            android:textColor="@color/white"
             android:textSize="@dimen/textsize_title_1"></org.vanguardmatrix.engine.customviews.CustomTextView>
 
         <ImageView
-            android:layout_width="@dimen/margin_13"
-            android:layout_height="@dimen/margin_13"
+            android:layout_width="@dimen/margin_15"
+            android:layout_height="@dimen/margin_15"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="@dimen/margin_4"
             android:layout_above="@+id/welcome_title"
-            android:src="@drawable/connect_logo"></ImageView>
+            android:src="@drawable/white_app_icon"></ImageView>
 
 
         <org.vanguardmatrix.engine.customviews.CustomTextView
@@ -40,8 +41,8 @@
             android:ellipsize="end"
             android:gravity="center"
             android:maxLines="6"
-            android:text="@string/intro_text_second"
-            android:textColor="@color/imkhi_black_tr70"
+            android:text="@string/intro_text_third"
+            android:textColor="@color/white"
             android:textSize="@dimen/textsize_title_4">
 
         </org.vanguardmatrix.engine.customviews.CustomTextView>

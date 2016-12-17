@@ -19,12 +19,16 @@
         <TextView
             android:id="@+id/let_get_started"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/margin_4_5"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="@dimen/margin_3"
-            android:text="Let's Get it Started >"
-            android:textColor="@color/who_do_u_blue"
+            android:gravity="center"
+            android:paddingLeft="@dimen/margin_2"
+            android:paddingRight="@dimen/margin_2"
+            android:background="@drawable/bg_new_white_button"
+            android:text="Let's Get Started"
+            android:textColor="@color/white"
             android:textSize="@dimen/textsize_title_4"></TextView>
 
         <me.relex.circleindicator.CircleIndicator
