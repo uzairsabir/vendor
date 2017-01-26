@@ -4,7 +4,6 @@ import android.app.Activity;
 
 import com.thetechsolutions.whodouvendor.AppHelpers.Config.AppConstants;
 import com.thetechsolutions.whodouvendor.AppHelpers.DataBase.RealmDataInsert;
-import com.thetechsolutions.whodouvendor.AppHelpers.DataBase.RealmDataRetrive;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -20,7 +19,7 @@ import java.util.ArrayList;
  */
 public class WebserviceModel {
 
-    public static boolean getAppointments(Activity activity,String appointmentStatus) {
+    public static boolean getAppointments(Activity activity, String appointmentStatus) {
         String id = AppPreferences.getString(AppPreferences.PREF_USER_ID);
 
         ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -45,7 +44,7 @@ public class WebserviceModel {
 
                         try {
 
-                            RealmDataInsert.insertSchedule(activity,resultJson.getJSONArray(AppConstants.BODY));
+                            RealmDataInsert.insertSchedule(activity, resultJson.getJSONArray(AppConstants.BODY));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         } catch (Exception e) {
@@ -123,7 +122,7 @@ public class WebserviceModel {
     }
 
     public static boolean updateAppointments(String appointment_id, String appointmentdatetime, String duration, String description, String appointment_status, String calendarId) {
-      //  String id = String.valueOf(RealmDataRetrive.getProfile().getId());
+        //  String id = String.valueOf(RealmDataRetrive.getProfile().getId());
 
         ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
 
@@ -136,7 +135,7 @@ public class WebserviceModel {
 //                "consumer_device_type": "android",
 //                "calender_guid": "calendarGuid"
 //        }
-      //  params.add(new BasicNameValuePair("consumer_id", id));
+        //  params.add(new BasicNameValuePair("consumer_id", id));
         params.add(new BasicNameValuePair("appointment_id", appointment_id));
         params.add(new BasicNameValuePair("appointment_date_time", appointmentdatetime));
         params.add(new BasicNameValuePair("estimated_duration", duration));
@@ -184,7 +183,7 @@ public class WebserviceModel {
 
     }
 
-    public static boolean updateAppointmentStatus(Activity activity,String appointment_id, String updateStatus, String guid, String cancelReason) {
+    public static boolean updateAppointmentStatus(Activity activity, String appointment_id, String updateStatus, String guid, String cancelReason) {
         //  String id = String.valueOf(RealmDataRetrive.getProfile().getId());
 
         ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -214,7 +213,7 @@ public class WebserviceModel {
 
                         try {
 
-                            return RealmDataInsert.insertSchedule(activity,resultJson.getJSONArray(AppConstants.BODY));
+                            return RealmDataInsert.insertSchedule(activity, resultJson.getJSONArray(AppConstants.BODY));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         } catch (Exception e) {
@@ -236,6 +235,7 @@ public class WebserviceModel {
         return false;
 
     }
+
     public static boolean getPreference() {
         String id = AppPreferences.getString(AppPreferences.PREF_USER_ID);
 
@@ -328,6 +328,7 @@ public class WebserviceModel {
         return false;
 
     }
+
     public static boolean createPayment(String consumer_id, String payment_amount, String payment_description, String service_date, String payment_status, String request_receipt) {
         //  String id = String.valueOf(RealmDataRetrive.getProfile().getId());
         String id = AppPreferences.getString(AppPreferences.PREF_USER_ID);
@@ -382,4 +383,88 @@ public class WebserviceModel {
 
     }
 
+    public static boolean savePayPal(String PayPal_Id) {
+        //  String id = String.valueOf(RealmDataRetrive.getProfile().getId());
+        String id = AppPreferences.getString(AppPreferences.PREF_USER_NUMBER);
+        ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
+
+        params.add(new BasicNameValuePair("my_username", id));
+        params.add(new BasicNameValuePair("my_paypal_id", PayPal_Id));
+
+
+        JSONObject resultJson;
+        try {
+
+            resultJson = WebService.callHTTPPost(
+                    ServiceUrl.call_save_paypal, params, true)
+                    .extractJSONObject();
+
+            if (WebService.getResponseCode(resultJson) == 0) {
+
+                return true;
+            }
+
+        } catch (OutOfMemoryError e) {
+            e.printStackTrace();
+
+        }
+        return false;
+
+    }
+    public static boolean sendInvitationToVendor(String number,String name) {
+        //  String id = String.valueOf(RealmDataRetrive.getProfile().getId());
+        String id = AppPreferences.getString(AppPreferences.PREF_USER_NUMBER);
+        ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
+
+        params.add(new BasicNameValuePair("number", number));
+        params.add(new BasicNameValuePair("name", name));
+
+
+        JSONObject resultJson;
+        try {
+
+            resultJson = WebService.callHTTPPost(
+                    ServiceUrl.call_vendor_to_vendor, params, true)
+                    .extractJSONObject();
+
+            if (WebService.getResponseCode(resultJson) == 0) {
+
+                return true;
+            }
+
+        } catch (OutOfMemoryError e) {
+            e.printStackTrace();
+
+        }
+        return false;
+
+    }
+    public static boolean sendInvitationToConsumer(String number,String name) {
+        //  String id = String.valueOf(RealmDataRetrive.getProfile().getId());
+        String id = AppPreferences.getString(AppPreferences.PREF_USER_NUMBER);
+        ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
+
+        params.add(new BasicNameValuePair("number", number));
+        params.add(new BasicNameValuePair("name", name));
+
+
+        JSONObject resultJson;
+        try {
+
+            resultJson = WebService.callHTTPPost(
+                    ServiceUrl.call_vendor_to_friend, params, true)
+                    .extractJSONObject();
+
+            if (WebService.getResponseCode(resultJson) == 0) {
+
+                return true;
+            }
+
+        } catch (OutOfMemoryError e) {
+            e.printStackTrace();
+
+        }
+        return false;
+
+    }
 }

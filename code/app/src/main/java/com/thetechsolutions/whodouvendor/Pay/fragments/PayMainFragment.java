@@ -8,7 +8,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
 
+import com.nhaarman.listviewanimations.appearance.simple.AlphaInAnimationAdapter;
+import com.nhaarman.listviewanimations.itemmanipulation.DynamicListView;
 import com.thetechsolutions.whodouvendor.AppHelpers.DataBase.RealmDataRetrive;
 import com.thetechsolutions.whodouvendor.AppHelpers.DataTypes.PayDT;
 import com.thetechsolutions.whodouvendor.AppHelpers.DataTypes.ScheduleDT;
@@ -17,12 +21,12 @@ import com.thetechsolutions.whodouvendor.Pay.adapters.PayListAdapter;
 import com.thetechsolutions.whodouvendor.Pay.controller.PayController;
 import com.thetechsolutions.whodouvendor.R;
 import com.thetechsolutions.whodouvendor.Schedule.adapters.ScheduleListAdapter;
-import com.nhaarman.listviewanimations.appearance.simple.AlphaInAnimationAdapter;
-import com.nhaarman.listviewanimations.itemmanipulation.DynamicListView;
 
+import org.vanguardmatrix.engine.android.AppPreferences;
 import org.vanguardmatrix.engine.customviews.ProgressActivity;
 import org.vanguardmatrix.engine.utils.MyLogs;
 import org.vanguardmatrix.engine.utils.NetworkManager;
+import org.vanguardmatrix.engine.utils.UtilityFunctions;
 
 import io.realm.RealmResults;
 import uk.co.ribot.easyadapter.EasyAdapter;
@@ -40,6 +44,8 @@ public class PayMainFragment extends Fragment implements View.OnClickListener {
     DynamicListView dynamicListView;
     EasyAdapter easyAdapter;
     public static int tab_pos;
+    private EditText paypal_id;
+    private TextView save_stripe;
 
 
     public static Fragment newInstance(int sectionNumber,
@@ -74,6 +80,23 @@ public class PayMainFragment extends Fragment implements View.OnClickListener {
             progressActivity.showContent();
         }
 
+        try {
+            paypal_id = (EditText) rootView.findViewById(R.id.paypal_id);
+            save_stripe = (TextView) rootView.findViewById(R.id.save_stripe);
+
+            paypal_id.setText(AppPreferences.getString(AppPreferences.PREF_PAYPAL_ID));
+            save_stripe.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AppPreferences.setString(AppPreferences.PREF_PAYPAL_ID, paypal_id.getText().toString());
+                    UtilityFunctions.showToast_onCenter("Saved Successfully", activity);
+                    PayController.getInstance().createPaypalId(activity, paypal_id.getText().toString());
+                }
+            });
+        } catch (Exception e) {
+
+        }
+
         return rootView;
     }
 
@@ -91,7 +114,7 @@ public class PayMainFragment extends Fragment implements View.OnClickListener {
     }
 
     private void loadData() {
-      //  new getDataList().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        //  new getDataList().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
         if (getArguments().getInt(ARG_SECTION_POSITION) == 0) {
             if (RealmDataRetrive.getPayList(0).size() > 0) {
                 new getDataList(0).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
@@ -117,9 +140,11 @@ public class PayMainFragment extends Fragment implements View.OnClickListener {
 
 
         int _tab_id;
+
         getDataList(int tab_id) {
             _tab_id = tab_id;
         }
+
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -174,7 +199,7 @@ public class PayMainFragment extends Fragment implements View.OnClickListener {
         MyLogs.printinfo("arrayList " + arrayList.size());
         easyAdapter = new EasyAdapter<>(
                 activity,
-                PayListAdapter.newInstance(activity,getArguments().getInt(ARG_SECTION_POSITION)),
+                PayListAdapter.newInstance(activity, getArguments().getInt(ARG_SECTION_POSITION)),
                 arrayList, mListener);
         AlphaInAnimationAdapter animationAdapter = new AlphaInAnimationAdapter(easyAdapter);
         animationAdapter.setAbsListView(dynamicListView);

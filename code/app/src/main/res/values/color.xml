@@ -9,26 +9,27 @@
     <color name="who_do_u_light_grey">#D4D4D4</color>
     <color name="who_do_u_medium_grey">#959595</color>
     <color name="who_do_u_dark_grey">#808080</color>
-    <color name="who_do_u_blue">#006BB6</color>
+    <!--<color name="who_do_u_blue">#006BB6</color>-->
+    <color name="who_do_u_blue">#0A56A6</color>
 
-    <color name="who_do_u_welcome_screen">#0088EE</color>
-    <color name="who_do_u_welcome_connect">#13C88E</color>
-    <color name="who_do_u_welcome_discover">#FF6E67</color>
-    <color name="who_do_u_welcome_manage">#6887FF</color>
+  <color name="who_do_u_welcome_screen">#0088EE</color>
+  <color name="who_do_u_welcome_connect">#13C88E</color>
+  <color name="who_do_u_welcome_discover">#FF6E67</color>
+  <color name="who_do_u_welcome_manage">#6887FF</color>
 
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+  <color name="colorPrimary">#3F51B5</color>
+  <color name="colorPrimaryDark">#303F9F</color>
+  <color name="colorAccent">#FF4081</color>
 
-    <color name="app_bg_color">#ffffff</color>
-    <color name="app_theme">#35439a</color>
-    <color name="app_text_color">#666666</color>
-    <color name="underline_color">#dfdfdf</color>
-    <color name="app_home_bg">#e6e6e6</color>
-    <color name="app_text_blue">#667dff</color>
+  <color name="app_bg_color">#ffffff</color>
+  <color name="app_theme">#35439a</color>
+  <color name="app_text_color">#666666</color>
+  <color name="underline_color">#dfdfdf</color>
+  <color name="app_home_bg">#e6e6e6</color>
+  <color name="app_text_blue">#667dff</color>
 
-    <color name="login_btn">#556dff</color>
-    <!--<color name="login_btn">#f6f6f6</color>-->
+  <color name="login_btn">#556dff</color>
+  <!--<color name="login_btn">#f6f6f6</color>-->
     <color name="login_btn_hover">#35439a</color>
     <color name="fb_btn">#48629b</color>
     <color name="fb_btn_hover">#344770</color>

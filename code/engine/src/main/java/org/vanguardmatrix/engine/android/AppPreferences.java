@@ -51,6 +51,7 @@ public class AppPreferences {
 
     public static final String PREF_MY_PROVIDERS_NUMBERS = "PREF_MY_PROVIDERS_NUMBERS";
     public static final String PREF_MY_FRIENDS_NUMBERS = "PREF_MY_FRIENDS_NUMBERS";
+    public static final String PREF_PAYPAL_ID= "PREF_PAYPAL_ID";
 
     private static SharedPreferences getSharedPreferences() {
         return PreferenceManager.getDefaultSharedPreferences(Application

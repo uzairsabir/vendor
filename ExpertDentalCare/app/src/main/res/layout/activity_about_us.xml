@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/main_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/big_image" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/create_appointment"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Create Appointment"
+            android:textColor="#ffffff"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/view_appointments"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/create_appointment"
+            android:background="@color/colorPrimaryDark"
+            android:text="View Appointments"
+            android:textColor="#ffffff"
+            android:textSize="10sp" />
+
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="About Our Experience"
+                android:textColor="#008000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Our dental clinic provides a comfortable, relaxing environment. From the moment you walk in our doors, your comfort is our main concern.
+You can count on The Happy Tooth to make your dental care easy and effective, because of our:
+\n* Friendly, welcoming staff.
+\n* Highly-skilled dental and orthodontic professionals.
+\n* Focus on painless dentistry."
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Why Choose Us?"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp"
+                    android:textStyle="italic" />
+
+                <ImageView
+                    android:id="@+id/img_one"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/title"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/one_img" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/img_one"
+                    android:scaleType="centerCrop"
+                    android:text="We provide affordable quality dental care to the people over 10 years. Our dentists are well qualified and experienced."
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/title_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Our Mission"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp"
+                    android:textStyle="italic" />
+
+                <ImageView
+                    android:id="@+id/img_two"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/title_two"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/two_ima" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title_two"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/img_two"
+                    android:scaleType="centerCrop"
+                    android:text="At Habib Dental Clinic, its our mission to help every member of your family look and feel his or her best starting with a sparkling healthy smile that will last a lifetime."
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/title_three"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Our Vision"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp"
+                    android:textStyle="italic" />
+
+                <ImageView
+                    android:id="@+id/img_three"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/title_three"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/three_ima" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title_three"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/img_three"
+                    android:text="Habib Dental Clinic is committed to changing the way you think about dentistry. Its our goal to make every visit for every patient comfortable."
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/title_four"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Services"
+                    android:textColor="#008000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_four"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/title_four"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/root_canal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title_four"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/img_four"
+                    android:text="A root canal is a treatment to repair and save a badly damaged or infected tooth. The procedure involves removing the damaged area of the tooth (the pulp), cleaning and disinfecting it and then filling and sealing it."
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/title_five"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Our Specialist"
+                    android:textColor="#008000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/title_test"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title_five"
+                    android:text="Dr.Shoukat Arain "
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp"
+                    android:textStyle="italic" />
+
+
+                <ImageView
+                    android:id="@+id/img_five"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/title_test"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dr_ima" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title_test"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/img_five"
+                    android:text="Dr. Shoukat Arain is an internationally acclaimed cosmetic dentist and one of the most published exemplars in dental media. An expert in all facets of Dentistry with over 30 years of private practice, Dr. Shoukat is an authority among his peers when it comes to cosmetic, restorative and laser assisted cosmetic dentistry."
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/title_sixth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Dentist"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp"
+                    android:textStyle="italic"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/title_test_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title_sixth"
+                    android:text="Dr.Samreen"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:visibility="gone" />
+
+
+                <ImageView
+                    android:id="@+id/img_sixth"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/title_test_two"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dr_ima_two" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title_test_two"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/img_sixth"
+                    android:text="Dr.Samreen is a general dentist whose passion centers on cosmetic dentistry and endodontics. Her practice philosophy is to give her patients a perfect smile and a comfortable and stress-free experience using the latest advances in dentistry."
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/title_seven"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Dentist"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp"
+                    android:textStyle="italic"
+                    android:visibility="gone" />
+
+
+                <ImageView
+                    android:id="@+id/img_seven"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/title_seven"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dr_ima_three" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title_seven"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/img_seven"
+                    android:text="Dr. Umair is a highly motivated Specialist Orthodontist with a vast experience. Dr. Umair has many years of experience in assessment, diagnosis and treatment of dental problems in children, teens and adults. He is specially trained to design appliances that align teeth, produce and maintain their normal function while at the same time improving facial esthetics.
+Chat Conversation End
+"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/title_eight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Dentist"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp"
+                    android:textStyle="italic"
+                    android:visibility="gone" />
+
+
+                <ImageView
+                    android:id="@+id/img_eight"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/title_eight"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dr_ima_four" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title_eight"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/img_eight"
+                    android:text="Dr. Zulfiqar is a distinguished Oral and Maxillofacial Surgeon.He offers full scope of oral surgical procedures related to teeth such as surgical extractions, removal or exposure of any other impacted teeth, periradicular surgeries (apicoectomies), cystectomies, periodontal surgical procedures, surgical insertions of temporary orthodontic bone anchored appliances, dental rehabilitation via insertion of dental implants and necessary prior bone augmentations.
+"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/title_nine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Dentist"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp"
+                    android:textStyle="italic"
+                    android:visibility="gone" />
+
+
+                <ImageView
+                    android:id="@+id/img_nine"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/title_nine"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dr_ima_five" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title_nine"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/img_nine"
+                    android:text="Dr. Ahmed is a specialist in endodontics and is passionate in delivering the highest standard of dental care. As an endodontist, Dr. Ahmed is an expert in diagnosing tooth pain and performing root canal treatment to save diseased and injured teeth. He specialized in using rotary endodontics and operating dental microscopes."
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/title_ten"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Dentist"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp"
+                    android:textStyle="italic"
+                    android:visibility="gone" />
+
+
+                <ImageView
+                    android:id="@+id/img_ten"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/title_ten"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dr_ima_six" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title_ten"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/img_ten"
+                    android:text="Dr. Ali Salman is a Specialist Pediatric Dentist with nearly 12 years of experience in providing full-spectrum dental services for babies, children and teens. He performs root canal treatments for primary teeth, crowns and fillings for cavities and interceptive orthodontics which involves early intervention to prevent development of malocclusions."
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/title_eleven"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Our Self"
+                    android:textColor="#008000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title_eleven"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Group Leader Name:Arooba Asif Khilji\nComputer Engineer\nContact No:+923213703733"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/title_twelev"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp"
+                    android:visibility="gone" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title_twelev"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Team Member Name:Marium Yousuf\nComputer Engineer\nContact No:+923353018628"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/title_thirteen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp"
+                    android:visibility="gone" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title_thirteen"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Team Member Name:Saba Shujaat\nComputer Engineer\nContact No:+923343327398"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/title_fourteen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp"
+                    android:visibility="gone" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title_fourteen"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Team Member Name:Namra Kanwal\nComputer Engineer\nContact No:+923331359668"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

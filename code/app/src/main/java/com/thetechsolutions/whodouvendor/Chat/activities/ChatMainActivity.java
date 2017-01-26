@@ -22,6 +22,7 @@ import com.thetechsolutions.whodouvendor.AppHelpers.Controllers.FragmentActivity
 import com.thetechsolutions.whodouvendor.AppHelpers.Controllers.MethodGenerator;
 import com.thetechsolutions.whodouvendor.AppHelpers.Controllers.TitleBarController;
 import com.thetechsolutions.whodouvendor.AppHelpers.DataBase.RealmDataRetrive;
+import com.thetechsolutions.whodouvendor.AppHelpers.DataTypes.ColleagesDT;
 import com.thetechsolutions.whodouvendor.AppHelpers.DataTypes.CustomersDT;
 import com.thetechsolutions.whodouvendor.AppHelpers.DataTypes.ScheduleDT;
 import com.thetechsolutions.whodouvendor.Chat.adapters.ChatListAdapter;
@@ -238,7 +239,32 @@ public class ChatMainActivity extends FragmentActivityController implements Meth
     }
 
     private void setAdapter(ArrayList<Conversation> arrayList) {
-//        MyLogs.printinfo("arrayList " + arrayList.size());
+        MyLogs.printinfo("arrayList " + arrayList.size());
+        ArrayList<Conversation> filterList = new ArrayList<>();
+        for (Conversation item : arrayList) {
+            boolean isFound = false;
+            for (ColleagesDT providerDT : RealmDataRetrive.getColleagesList()) {
+                if (item.getJid().toBareJid().toString().split("@")[0].equals(providerDT.getUsername() + "_v")) {
+                    if (providerDT.getIs_register_user().equals("1")) {
+                        filterList.add(item);
+
+                    }
+                    isFound=true;
+                }
+            }
+            for (CustomersDT providerDT : RealmDataRetrive.getCustomerList()) {
+                if (item.getJid().toBareJid().toString().split("@")[0].equals(providerDT.getUsername() + "_c")) {
+                    if (providerDT.getIs_register_user().equals("1")) {
+                        filterList.add(item);
+
+                    }
+                    isFound=true;
+                }
+            }
+            if(!isFound){
+                filterList.add(item);
+            }
+        }
         easyAdapter = new EasyAdapter<>(
                 activity,
                 ChatListAdapter.newInstance(activity),

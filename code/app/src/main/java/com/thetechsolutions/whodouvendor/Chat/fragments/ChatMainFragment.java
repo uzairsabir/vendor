@@ -182,7 +182,7 @@ public class ChatMainFragment extends Fragment implements View.OnClickListener {
     }
 
     private void setAdapter(RealmResults<ChatDT> arrayList) {
-        MyLogs.printinfo("arrayList " + arrayList.size());
+     //   MyLogs.printinfo("arrayList " + arrayList.get(0).get);
         easyAdapter = new EasyAdapter<>(
                 activity,
                 ChatListAdapter.newInstance(activity),

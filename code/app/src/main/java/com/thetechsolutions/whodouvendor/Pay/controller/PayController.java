@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.os.AsyncTask;
 
 import com.thetechsolutions.whodouvendor.AppHelpers.Controllers.AppController;
+import com.thetechsolutions.whodouvendor.AppHelpers.DataBase.RealmDataRetrive;
 import com.thetechsolutions.whodouvendor.AppHelpers.WebService.WebserviceModel;
 import com.thetechsolutions.whodouvendor.R;
 
 import org.vanguardmatrix.engine.utils.MyLogs;
+import org.vanguardmatrix.engine.utils.NetworkManager;
 import org.vanguardmatrix.engine.utils.UtilityFunctions;
 
 /**
@@ -44,10 +46,9 @@ public class PayController {
                               String request_recipet) {
         new createPayment(activity, vendor_id, payment_amount, payment_description, service_date, payment_status, request_recipet).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
-
-
-
-
+    public void createPaypalId(Activity activity, String paypal) {
+        new getSavePayPalIdToServer(paypal).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+    }
 
     private class createPayment extends AsyncTask<String, Void, Integer> {
 
@@ -108,5 +109,42 @@ public class PayController {
         }
 
 
+    }
+    private class getSavePayPalIdToServer extends AsyncTask<String, Void, Boolean> {
+
+        String id="";
+        getSavePayPalIdToServer(String _id) {
+            id = _id;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+        }
+
+
+        @Override
+        protected Boolean doInBackground(String... params) {
+            try {
+
+
+                return WebserviceModel.savePayPal(id);
+
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return false;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean result) {
+            super.onPostExecute(result);
+            if (result) {
+
+            }
+
+        }
     }
 }

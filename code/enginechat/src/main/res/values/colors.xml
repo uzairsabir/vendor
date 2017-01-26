@@ -4,11 +4,11 @@
 	<!--<color name="primary700">#ff0a7e07</color>-->
 	<!--<color name="primary800">#ff026100</color>-->
 
-	<color name="primary500">#006BB6</color>
-	<color name="primary700">#006BB6</color>
-	<color name="primary800">#006BB6</color>
-	<color name="primary900">#006BB6</color>
-	<color name="accent">#ff0091ea</color>
+	<color name="primary500">#0A56A6</color>
+	<color name="primary700">#0A56A6</color>
+	<color name="primary800">#0A56A6</color>
+	<color name="primary900">#0A56A6</color>
+	<color name="accent">#0A56A6</color>
 	<color name="black87">#de000000</color>
 	<color name="black54">#8a000000</color>
 	<color name="black26">#42000000</color>

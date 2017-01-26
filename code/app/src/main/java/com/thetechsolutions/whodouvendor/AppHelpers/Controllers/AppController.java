@@ -14,6 +14,7 @@ import com.thetechsolutions.whodouvendor.AppHelpers.DataBase.RealmDataInsert;
 import com.thetechsolutions.whodouvendor.AppHelpers.DataBase.RealmDataRetrive;
 import com.thetechsolutions.whodouvendor.AppHelpers.DataTypes.ProfileDT;
 import com.thetechsolutions.whodouvendor.AppHelpers.DataTypes.CustomersDT;
+import com.thetechsolutions.whodouvendor.AppHelpers.WebService.AsynGetDataController;
 import com.thetechsolutions.whodouvendor.R;
 
 import org.json.JSONObject;
@@ -176,7 +177,7 @@ public class AppController {
 
     }
 
-    public static void openChat(final Activity activity, String contactNumber, String contactName, String contactAvatar, String isRegistered, int tab) {
+    public static void openChat(final Activity activity, final String contactNumber, final String contactName, String contactAvatar, String isRegistered, final int tab) {
         ProfileDT profileDT = RealmDataRetrive.getProfile();
         MyLogs.printinfo("chat_tab_"+tab);
 
@@ -190,6 +191,7 @@ public class AppController {
                     .onPositive(new MaterialDialog.SingleButtonCallback() {
                         @Override
                         public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                            AsynGetDataController.getInstance().sendInvitation(activity,contactNumber,contactName,tab);
                             showToast(activity, "Invitation has been sent");
                         }
                     })
